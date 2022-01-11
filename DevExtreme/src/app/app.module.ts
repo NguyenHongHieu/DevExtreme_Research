@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { DxBulletModule, DxButtonModule, DxDataGridModule } from 'devextreme-angular';
+import {
+  DxBulletModule,
+  DxButtonModule,
+  DxDataGridModule,
+  DxPopupModule,
+  DxTemplateModule,
+} from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProgramListComponent } from './program/program-list/program-list.component';
@@ -9,12 +15,7 @@ import { ProgramOfferingComponent } from './program/program-offering/program-off
 import { NotFoundComponent } from './program/not-found/not-found.component';
 import { SearchFormComponent } from './shared/search-form/search-form.component';
 
-
-const DEVEXTREME_MODULES = [
-  DxBulletModule,
-  DxButtonModule,
-  DxDataGridModule
-];
+const DEVEXTREME_MODULES = [DxBulletModule, DxButtonModule, DxDataGridModule];
 
 @NgModule({
   declarations: [
@@ -24,14 +25,16 @@ const DEVEXTREME_MODULES = [
     ProgramOfferingComponent,
     NotFoundComponent,
     SearchFormComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ...DEVEXTREME_MODULES
+    DxPopupModule,
+    DxButtonModule,
+    DxTemplateModule,
+    ...DEVEXTREME_MODULES,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

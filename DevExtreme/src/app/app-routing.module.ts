@@ -7,27 +7,30 @@ import { ProgramFormDetailComponent } from './program/program-form-detail/progra
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'programlist', pathMatch: 'full',
+    path: '',
+    redirectTo: 'programlist',
+    pathMatch: 'full',
   },
   {
-    path: 'programlist', component: ProgramListComponent,
+    path: 'programlist',
+    component: ProgramListComponent,
   },
   {
-    path: 'programformdetail', component: ProgramFormDetailComponent,
+    path: 'programlist/:id',
+    component: ProgramFormDetailComponent,
   },
   {
-    path: 'programformoffering', component: ProgramOfferingComponent,
+    path: 'programformoffering',
+    component: ProgramOfferingComponent,
   },
   {
     path: '**',
     component: NotFoundComponent,
   },
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
