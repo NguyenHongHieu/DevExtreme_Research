@@ -1,1 +1,92 @@
-<p>program-offering works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Exprerience Registry</a>
+    <div class="navbar-collapse collapse order-3">
+        <ul class="navbar-nav ml-auto">
+            <ng-template #logged>
+                <li>
+                    <div class="text-warning mt-2 mr-2"></div>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-warning">
+                        Profile
+                    </button>
+                </li>
+            </ng-template>
+        </ul>
+    </div>
+</nav>
+<dx-popup [width]="500" [height]="1000" [showTitle]="true" title="Add program Offering" [dragEnabled]="true"
+    [closeOnOutsideClick]="true" [(visible)]="popupVisible">
+    <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="before">
+    </dxi-toolbar-item>
+    <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="after">
+    </dxi-toolbar-item>
+    <dxo-position at="bottom" my="center"> </dxo-position>
+    <div *dxTemplate="let data of 'content'">
+        <div class="dx-field">
+            <div class="dx-field-label">Learning methods</div>
+            <div class="dx-field-value">
+                <dx-radio-group [items]="priorities" [value]="priorities[0]" layout="horizontal">
+                </dx-radio-group>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">With placeholder</div>
+            <div class="dx-field-value">
+                <dx-text-box placeholder="Streets address"></dx-text-box>
+            </div>
+            <div class="dx-field-value">
+                <dx-text-box placeholder="City"></dx-text-box>
+            </div>
+            <div class="dx-field-value" style="display:flex">
+                <dx-text-box placeholder="State"></dx-text-box>
+                <dx-text-box placeholder="Zip code"></dx-text-box>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Cost</div>
+            <div class="dx-field-value" style="display: flex">
+                <dx-text-box mask="$">
+                </dx-text-box>
+                <dx-select-box placeholder="Choose Product" [showClearButton]="true">
+                </dx-select-box>
+            </div>
+        </div>
+        <div class="dx-field" style="display:flex">
+            <div class="dx-field-label">Program date</div>
+            <div class="dx-field-value">
+                <span>Start date</span>
+                <dx-date-box [value]="now" type="date"> </dx-date-box>
+            </div>
+            <div class="dx-field-value">
+                <span>Start date</span>
+                <dx-date-box [value]="now" type="date"> </dx-date-box>
+            </div>
+        </div>
+        <div class="dx-field" style="display: flex">
+            <div class="dx-field-label"></div>
+            <div class="dx-field-value">
+                <span>Start time</span>
+                <dx-date-box type="time" [showClearButton]="true">
+                </dx-date-box>
+            </div>
+            <div class="dx-field-value">
+                <span>End time</span>
+                <dx-date-box type="time" [showClearButton]="true">
+                </dx-date-box>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Unchecked</div>
+            <div class="dx-field-value">
+                <dx-check-box [value]="false"></dx-check-box>
+            </div>
+            <div class="dx-field-value">
+                <dx-check-box [value]="false"></dx-check-box>
+            </div>
+            <div class="dx-field-value">
+                <dx-check-box [value]="false"></dx-check-box>
+            </div>
+        </div>
+    </div>
+</dx-popup>

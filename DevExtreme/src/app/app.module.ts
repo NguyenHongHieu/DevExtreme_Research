@@ -6,6 +6,14 @@ import {
   DxDataGridModule,
   DxPopupModule,
   DxTemplateModule,
+  DxNavBarModule,
+  DxFormModule,
+  DxCheckBoxModule,
+  DxRadioGroupModule,
+  DxTextBoxModule,
+  DxSelectBoxModule,
+  DxDateBoxModule,
+
 } from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +22,9 @@ import { ProgramFormDetailComponent } from './program/program-form-detail/progra
 import { ProgramOfferingComponent } from './program/program-offering/program-offering.component';
 import { NotFoundComponent } from './program/not-found/not-found.component';
 import { SearchFormComponent } from './shared/search-form/search-form.component';
+import { LayoutComponent } from './layout/layout.component';
 
-const DEVEXTREME_MODULES = [DxBulletModule, DxButtonModule, DxDataGridModule];
+const DEVEXTREME_MODULES = [DxDateBoxModule, DxBulletModule, DxButtonModule, DxDataGridModule, DxNavBarModule, DxTextBoxModule, DxSelectBoxModule];
 
 @NgModule({
   declarations: [
@@ -25,6 +34,7 @@ const DEVEXTREME_MODULES = [DxBulletModule, DxButtonModule, DxDataGridModule];
     ProgramOfferingComponent,
     NotFoundComponent,
     SearchFormComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,9 +42,13 @@ const DEVEXTREME_MODULES = [DxBulletModule, DxButtonModule, DxDataGridModule];
     DxPopupModule,
     DxButtonModule,
     DxTemplateModule,
+    DxFormModule,
+    DxCheckBoxModule,
+    DxRadioGroupModule,
+
     ...DEVEXTREME_MODULES,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -16,11 +16,15 @@ const routes: Routes = [
     component: ProgramListComponent,
   },
   {
+    path: 'programlist/add',
+    component: ProgramFormDetailComponent,
+  },
+  {
     path: 'programlist/:id',
     component: ProgramFormDetailComponent,
   },
   {
-    path: 'programformoffering',
+    path: 'addOffering',
     component: ProgramOfferingComponent,
   },
   {
@@ -33,4 +37,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
