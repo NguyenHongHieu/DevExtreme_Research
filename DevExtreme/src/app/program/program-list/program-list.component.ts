@@ -12,8 +12,7 @@ import { Service } from 'src/app/service/test.service';
 export class ProgramListComponent implements OnInit {
 
   dataSource: DataSource;
-  // dataSource: any;
-  // customizeTooltip: any;
+
   collapsed = false;
 
   contentReady = (e: any) => {
@@ -24,15 +23,10 @@ export class ProgramListComponent implements OnInit {
   };
 
   customizeTooltip = (pointsInfo: any) => ({ text: `${parseInt(pointsInfo.originalValue)}%` });
-  // constructor() { }
   constructor(service: Service) {
     this.dataSource = service.getDataSource();
   }
 
   ngOnInit(): void {
   }
-
-  //   contentReady(e: any) {
-
-  //   }
 }
