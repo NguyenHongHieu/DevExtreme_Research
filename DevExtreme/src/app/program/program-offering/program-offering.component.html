@@ -7,21 +7,14 @@
                     <div class="text-warning mt-2 mr-2"></div>
                 </li>
                 <li>
-                    <button type="button" class="btn btn-warning">
-                        Profile
-                    </button>
+                    <button type="button" class="btn btn-warning">Profile</button>
                 </li>
             </ng-template>
         </ul>
     </div>
 </nav>
-<dx-popup [width]="500" [height]="1000" [showTitle]="true" title="Add program Offering" [dragEnabled]="true"
+<dx-popup [width]="500" [height]="650" [showTitle]="true" title="Add program Offering" [dragEnabled]="true"
     [closeOnOutsideClick]="true" [(visible)]="popupVisible">
-    <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="before">
-    </dxi-toolbar-item>
-    <dxi-toolbar-item widget="dxButton" toolbar="bottom" location="after">
-    </dxi-toolbar-item>
-    <dxo-position at="bottom" my="center"> </dxo-position>
     <div *dxTemplate="let data of 'content'">
         <div class="dx-field">
             <div class="dx-field-label">Learning methods</div>
@@ -33,60 +26,91 @@
         <div class="dx-field">
             <div class="dx-field-label">With placeholder</div>
             <div class="dx-field-value">
-                <dx-text-box placeholder="Streets address"></dx-text-box>
+                <dx-text-box placeholder="Streets address"></dx-text-box> <br>
             </div>
             <div class="dx-field-value">
-                <dx-text-box placeholder="City"></dx-text-box>
+                <dx-text-box placeholder="City"></dx-text-box> <br>
             </div>
-            <div class="dx-field-value" style="display:flex">
+            <div class="dx-field-value" style="display: flex">
                 <dx-text-box placeholder="State"></dx-text-box>
-                <dx-text-box placeholder="Zip code"></dx-text-box>
+                <div class="divider"></div>
+                <dx-text-box placeholder="Zip code"></dx-text-box> <br>
             </div>
         </div>
-        <div class="dx-field">
+        <div class="dx-field" style="display: flex">
             <div class="dx-field-label">Cost</div>
             <div class="dx-field-value" style="display: flex">
-                <dx-text-box mask="$">
-                </dx-text-box>
+                <dx-text-box mask="$"></dx-text-box>
+                <div class="divider"></div>
                 <dx-select-box placeholder="Choose Product" [showClearButton]="true">
                 </dx-select-box>
+                <br>
             </div>
         </div>
-        <div class="dx-field" style="display:flex">
+        <div class="dx-field" style="display: flex">
             <div class="dx-field-label">Program date</div>
             <div class="dx-field-value">
                 <span>Start date</span>
                 <dx-date-box [value]="now" type="date"> </dx-date-box>
             </div>
+            <div class="divider"></div>
             <div class="dx-field-value">
                 <span>Start date</span>
                 <dx-date-box [value]="now" type="date"> </dx-date-box>
             </div>
+            <br>
         </div>
         <div class="dx-field" style="display: flex">
             <div class="dx-field-label"></div>
             <div class="dx-field-value">
                 <span>Start time</span>
-                <dx-date-box type="time" [showClearButton]="true">
-                </dx-date-box>
+                <dx-date-box type="time" [showClearButton]="true"> </dx-date-box>
             </div>
+            <div class="divider"></div>
             <div class="dx-field-value">
                 <span>End time</span>
-                <dx-date-box type="time" [showClearButton]="true">
-                </dx-date-box>
+                <dx-date-box type="time" [showClearButton]="true"> </dx-date-box>
             </div>
         </div>
+        <span>Days:</span>
         <div class="dx-field">
-            <div class="dx-field-label">Unchecked</div>
+            <div class="dx-field-label"></div>
+
+            <dx-check-box [value]="false"></dx-check-box>
+            <div class="divider"> M </div>
+
+            <dx-check-box [value]="false"></dx-check-box>
+            <div class="divider"> T </div>
+
+            <dx-check-box [value]="false"></dx-check-box>
+            <div class="divider"> W </div>
+
+            <dx-check-box [value]="false"></dx-check-box>
+            <div class="divider"> Th </div>
+
+            <dx-check-box [value]="false"></dx-check-box>
+            <div class="divider"> F </div>
+
+            <dx-check-box [value]="false"></dx-check-box>
+            <div class="divider"> Sa </div>
+
+            <dx-check-box [value]="false"></dx-check-box>
+            <div class="divider"> Su </div>
+        </div>
+        <div class="dx-field" style="display: flex">
+            <div class="dx-field-label">Enrollment deadline </div>
             <div class="dx-field-value">
-                <dx-check-box [value]="false"></dx-check-box>
+                <dx-date-box [value]="now" type="date"> </dx-date-box>
             </div>
             <div class="dx-field-value">
-                <dx-check-box [value]="false"></dx-check-box>
             </div>
-            <div class="dx-field-value">
-                <dx-check-box [value]="false"></dx-check-box>
-            </div>
+        </div>
+        <div class="buttons-column">
+            <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120" (onClick)="click($event)">
+            </dx-button>
+            <div class="divider"></div>
+            <dx-button stylingMode="contained" text="Add" type="success" [width]="120" (onClick)="click($event)">
+            </dx-button>
         </div>
     </div>
 </dx-popup>

@@ -1,7 +1,7 @@
-import { Service } from './../../service/test.service';
 import { Component, OnInit } from '@angular/core';
 import { ProgramOfferingModel } from 'src/app/model/program-offering.model';
 import { OfferingService, PriorityEntity } from 'src/app/service/program-offering.service';
+import notify from 'devextreme/ui/notify';
 
 @Component({
   selector: 'app-program-offering',
@@ -9,6 +9,7 @@ import { OfferingService, PriorityEntity } from 'src/app/service/program-offerin
   styleUrls: ['./program-offering.component.css']
 })
 export class ProgramOfferingComponent implements OnInit {
+  capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
   popupVisible = true;
   offering: ProgramOfferingModel[] | undefined;
   priorities: string[];
@@ -28,6 +29,10 @@ export class ProgramOfferingComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  click = (e: any) => {
+    const buttonText = e.component.option('text');
+    notify(`The ${this.capitalize(buttonText)} button was clicked`);
+  };
 
   contentReady() {
 

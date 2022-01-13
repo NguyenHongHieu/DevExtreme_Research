@@ -2,3 +2,15 @@
   margin-bottom: 10px;
   margin-top: 0;
 }
+.buttons-column {
+  width: 150px;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  margin-left: 300px;
+}
+.divider {
+  width: 17px;
+  height: auto;
+  display: inline-block;
+}
