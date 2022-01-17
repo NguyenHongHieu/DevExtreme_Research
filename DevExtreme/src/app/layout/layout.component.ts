@@ -9,8 +9,11 @@ export class LayoutComponent implements OnInit {
   DataSource: number | undefined
   currentData: any;
   listData: any;
+  withTitleVisible: boolean;
 
-  constructor() { }
+  constructor() {
+    this.withTitleVisible = false;
+  }
 
   ngOnInit(): void {
   }

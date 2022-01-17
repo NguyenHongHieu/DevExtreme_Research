@@ -4,6 +4,7 @@ import { DxiColumnComponent, DxoSearchPanelComponent } from 'devextreme-angular/
 import { DxoMarginComponent } from 'devextreme-angular/ui/nested';
 import DataSource from 'devextreme/data/data_source';
 import { Service } from 'src/app/service/test.service';
+import themes from 'devextreme/ui/themes';
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
@@ -12,8 +13,14 @@ import { Service } from 'src/app/service/test.service';
 export class ProgramListComponent implements OnInit {
 
   dataSource: DataSource;
-
+  currentProduct: any;
   collapsed = false;
+  allMode: string;
+
+  checkBoxesMode: string;
+
+
+
 
   contentReady = (e: any) => {
     if (!this.collapsed) {
@@ -23,10 +30,19 @@ export class ProgramListComponent implements OnInit {
   };
 
   customizeTooltip = (pointsInfo: any) => ({ text: `${parseInt(pointsInfo.originalValue)}%` });
+
   constructor(service: Service) {
     this.dataSource = service.getDataSource();
+    this.checkBoxesMode = themes.current().startsWith('material') ? 'always' : 'onClick';
+    this.allMode = 'allPages';
   }
+  itemClick(data: any) {
+    const item = data.itemData;
 
+    if (item.price) {
+      this.currentProduct = item;
+    }
+  }
   ngOnInit(): void {
   }
 }

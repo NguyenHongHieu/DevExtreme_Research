@@ -14,7 +14,10 @@ import {
   DxSelectBoxModule,
   DxDateBoxModule,
   DxTextAreaModule,
-  DxRangeSliderModule
+  DxRangeSliderModule,
+  DxMenuModule,
+  DxPopoverModule,
+  DxListModule,
 
 } from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
@@ -49,6 +52,9 @@ const DEVEXTREME_MODULES = [DxDateBoxModule, DxBulletModule, DxButtonModule, DxD
     DxRadioGroupModule,
     DxTextAreaModule,
     DxRangeSliderModule,
+    DxMenuModule,
+    DxPopoverModule,
+    DxListModule,
 
 
     ...DEVEXTREME_MODULES,

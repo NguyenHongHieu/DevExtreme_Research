@@ -1,4 +1,3 @@
-<p>program-form-detail works!</p>
 <div class="program">
     <div class="form">
         <div class="dx-field" style="display: flex;">
@@ -16,7 +15,8 @@
         <div>
             <div class="dx-field" style="display: flex;">
                 <div class="dx-field-label">About this program</div>
-                <dx-text-area [height]="90" [(value)]="valueForEditableTextArea" [valueChangeEvent]="eventValue">
+                <dx-text-area class="dx-field-value" [height]="90" [(value)]="valueForEditableTextArea"
+                    [valueChangeEvent]="eventValue">
                 </dx-text-area>
                 <br>
             </div>
@@ -27,7 +27,7 @@
                 <dx-select-box [items]="simpleProducts"></dx-select-box>
             </div>
         </div>
-        <div class="dx-field" style="display: flex;">
+        <div class="dx-field" style="display: flex; ">
             <div class="dx-field-label">Website</div>
             <div class="dx-field-value">
                 <dx-text-box value="John Smith"></dx-text-box>
@@ -58,7 +58,7 @@
                 <div class="divider"></div>
                 <dx-select-box placeholder="Choose Product" [showClearButton]="true">
                 </dx-select-box>
-                <br>
+
             </div>
         </div>
         <div class="dx-field">
@@ -71,15 +71,15 @@
         <div class="dx-field">
             <div class="dx-field-label"></div>
             <div class="dx-field-value">
-                <dx-text-box placeholder="Streets address"></dx-text-box> <br>
+                <dx-text-box placeholder="Streets address"></dx-text-box>
             </div>
 
-            <div class="dx-field-value" style="display: flex">
+            <div class="dx-field-value" style="display: flex; margin-top: 12px;">
                 <dx-text-box placeholder="City"></dx-text-box>
                 <div class="divider"></div>
                 <dx-text-box placeholder="State"></dx-text-box>
                 <div class="divider"></div>
-                <dx-text-box placeholder="Zip code"></dx-text-box> <br>
+                <dx-text-box placeholder="Zip code"></dx-text-box>
             </div>
 
             <div class="dx-field">
@@ -93,11 +93,32 @@
                     <dx-button stylingMode="contained" text="Cancel" type="success" [width]="120"
                         (onClick)="click($event)">
                     </dx-button>
-                    <br>
-
                 </div>
             </div>
+            <h1>Add Offering</h1>
+            <dx-button icon="add" text="add" class="button-info">
+            </dx-button>
         </div>
     </div>
+    <div class="buttons-column" style="margin: 20px 20px 20px 20px">
+        <div style="float: left;">
+            <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120" (onClick)="click($event)">
+            </dx-button>
+        </div>
+
+        <div style="float: right;">
+            <dx-button stylingMode="contained" text="Preview" type="normal" [width]="120" (onClick)="click($event)">
+            </dx-button>
+            <div class="divider"></div>
+            <dx-button stylingMode="contained" text="Save for later" type="normal" [width]="120"
+                (onClick)="click($event)">
+            </dx-button>
+            <div class="divider"></div>
+            <dx-button stylingMode="contained" text="Published" type="success" [width]="120" (onClick)="click($event)">
+            </dx-button>
+        </div>
+
+    </div>
+
 
 </div>

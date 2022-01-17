@@ -1,3 +1,7 @@
+:root {
+  --WIDTH_TEXTBOX: 50;
+}
+
 .dx-popup-content p {
   margin-bottom: 10px;
   margin-top: 0;
@@ -10,7 +14,12 @@
   margin-left: 300px;
 }
 .divider {
-  width: 17px;
+  width: 20px;
   height: auto;
   display: inline-block;
+  margin-left: 5px;
+}
+
+.dx-field {
+  margin-top: 12px;
 }

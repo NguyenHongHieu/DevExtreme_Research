@@ -1,5 +1,45 @@
-<p>program-list works!</p>
-<dx-data-grid id="gridContainer" [dataSource]="dataSource" [remoteOperations]="false" [allowColumnReordering]="true"
+<div>
+    <div>
+        <p>Programs</p>
+        <ul>
+            <li>Active</li>
+            <li>Inactive</li>
+            <li>Unpublish</li>
+        </ul>
+        <dx-button stylingMode="contained" text="Add New" type="success" [width]="120">
+        </dx-button>
+    </div>
+    <div class="selection">
+        <div class="dx-field">
+            <div class="dx-field-value">
+                <dx-select-box displayExpr="Name" valueExpr="ID"></dx-select-box>
+            </div>
+        </div>
+        <div class="list-container">
+            <dx-list #list [searchEnabled]="true" searchExpr="Name" searchMode="contains">
+            </dx-list>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-value">
+                <div class="dx-field-label"></div>
+                <dx-select-box displayExpr="Name" valueExpr="ID"></dx-select-box>
+            </div>
+        </div>
+    </div>
+
+    <dx-data-grid id="grid-container" keyExpr="orderId" [showBorders]="true">
+        <dxo-selection [selectAllMode]="allMode" [showCheckBoxesMode]="checkBoxesMode" mode="multiple"></dxo-selection>
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxi-column dataField="Program name"></dxi-column>
+        <dxi-column dataField="Offering"></dxi-column>
+        <dxi-column dataField="Published by" [width]="180"></dxi-column>
+        <dxi-column dataField="Published on" dataType="date"></dxi-column>
+        <dxi-column dataField="View"></dxi-column>
+    </dx-data-grid>
+
+
+    <!-- <dx-data-grid id="gridContainer" [dataSource]="dataSource" [remoteOperations]="false" [allowColumnReordering]="true"
     [rowAlternationEnabled]="true" [showBorders]="true" (onContentReady)="contentReady($event)">
     <dxo-paging [pageSize]="10"></dxo-paging>
     <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 25, 50, 100]"></dxo-pager>
@@ -33,4 +73,5 @@
             </dx-bullet>
         </div>
     </div>
-</dx-data-grid>
+</dx-data-grid> -->
+</div>

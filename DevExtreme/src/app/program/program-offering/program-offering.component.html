@@ -13,7 +13,7 @@
         </ul>
     </div>
 </nav>
-<dx-popup [width]="500" [height]="650" [showTitle]="true" title="Add program Offering" [dragEnabled]="true"
+<dx-popup [width]="500" [height]="700" [showTitle]="true" title="Add program Offering" [dragEnabled]="true"
     [closeOnOutsideClick]="true" [(visible)]="popupVisible">
     <div *dxTemplate="let data of 'content'">
         <div class="dx-field">
@@ -23,95 +23,96 @@
                 </dx-radio-group>
             </div>
         </div>
-        <div class="dx-field">
-            <div class="dx-field-label"></div>
-            <div class="dx-field-value">
-                <dx-text-box placeholder="Streets address"></dx-text-box> <br>
+        <div class=dx-fieldset>
+            <div class="dx-field">
+                <div class="dx-field-label"></div>
+                <div class="dx-field-value">
+                    <dx-text-box placeholder="Streets address"></dx-text-box> <br>
+                </div>
+                <div class="dx-field-value">
+                    <dx-text-box placeholder="City"></dx-text-box>
+                </div>
+                <div class="dx-field-value" style="display: flex; margin-top: 12px;">
+                    <dx-text-box placeholder="State"></dx-text-box>
+                    <div class="divider"></div>
+                    <dx-text-box placeholder="Zip code"></dx-text-box>
+                </div>
             </div>
-            <div class="dx-field-value">
-                <dx-text-box placeholder="City"></dx-text-box> <br>
+            <div class="dx-field" style="display: flex">
+                <div class="dx-field-label">Cost</div>
+                <div class="dx-field-value" style="display: flex">
+                    <dx-text-box mask="$"></dx-text-box>
+                    <div class="divider"></div>
+                    <dx-select-box placeholder="Choose Product" [showClearButton]="true">
+                    </dx-select-box>
+
+                </div>
             </div>
-            <div class="dx-field-value" style="display: flex">
-                <dx-text-box placeholder="State"></dx-text-box>
+            <div class="dx-field" style="display: flex; margin-top: 20px;">
+                <div class="dx-field-label">Program date</div>
+                <div class="dx-field-value">
+                    <span>Start date</span>
+                    <dx-date-box [value]="now" type="date"> </dx-date-box>
+                </div>
                 <div class="divider"></div>
-                <dx-text-box placeholder="Zip code"></dx-text-box> <br>
-            </div>
-        </div>
-        <div class="dx-field" style="display: flex">
-            <div class="dx-field-label">Cost</div>
-            <div class="dx-field-value" style="display: flex">
-                <dx-text-box mask="$"></dx-text-box>
-                <div class="divider"></div>
-                <dx-select-box placeholder="Choose Product" [showClearButton]="true">
-                </dx-select-box>
+                <div class="dx-field-value">
+                    <span>Start date</span>
+                    <dx-date-box [value]="now" type="date"> </dx-date-box>
+                </div>
                 <br>
             </div>
-        </div>
-        <div class="dx-field" style="display: flex">
-            <div class="dx-field-label">Program date</div>
-            <div class="dx-field-value">
-                <span>Start date</span>
-                <dx-date-box [value]="now" type="date"> </dx-date-box>
+            <div class="dx-field" style="display: flex">
+                <div class="dx-field-label"></div>
+                <div class="dx-field-value">
+                    <span>Start time</span>
+                    <dx-date-box type="time" [showClearButton]="true"> </dx-date-box>
+                </div>
+                <div class="divider"></div>
+                <div class="dx-field-value">
+                    <span>End time</span>
+                    <dx-date-box type="time" [showClearButton]="true"> </dx-date-box>
+                </div>
             </div>
-            <div class="divider"></div>
-            <div class="dx-field-value">
-                <span>Start date</span>
-                <dx-date-box [value]="now" type="date"> </dx-date-box>
+            <span>Days:</span>
+            <div class="dx-field" style="float: right; margin-top: 50px;">
+                <!-- <div class="dx-field-label"></div> -->
+
+                <dx-check-box [value]="false"></dx-check-box>
+                <div class="divider"> M </div>
+
+                <dx-check-box [value]="false"></dx-check-box>
+                <div class="divider"> T </div>
+
+                <dx-check-box [value]="false"></dx-check-box>
+                <div class="divider"> W </div>
+
+                <dx-check-box [value]="false"></dx-check-box>
+                <div class="divider"> Th </div>
+
+                <dx-check-box [value]="false"></dx-check-box>
+                <div class="divider"> F </div>
+
+                <dx-check-box [value]="false"></dx-check-box>
+                <div class="divider"> Sa </div>
+
+                <dx-check-box [value]="false"></dx-check-box>
+                <div class="divider"> Su </div>
             </div>
-            <br>
-        </div>
-        <div class="dx-field" style="display: flex">
-            <div class="dx-field-label"></div>
-            <div class="dx-field-value">
-                <span>Start time</span>
-                <dx-date-box type="time" [showClearButton]="true"> </dx-date-box>
+            <div class="dx-field">
+                <div class="dx-field-label">Enrollment deadline </div>
+                <div class="dx-field-value">
+                    <dx-date-box [value]="now" type="date"> </dx-date-box>
+                </div>
+                <div class="dx-field-value">
+                </div>
             </div>
-            <div class="divider"></div>
-            <div class="dx-field-value">
-                <span>End time</span>
-                <dx-date-box type="time" [showClearButton]="true"> </dx-date-box>
-            </div>
-        </div>
-        <span>Days:</span>
-        <div class="dx-field">
-            <div class="dx-field-label"></div>
-
-            <dx-check-box [value]="false"></dx-check-box>
-            <div class="divider"> M </div>
-
-            <dx-check-box [value]="false"></dx-check-box>
-            <div class="divider"> T </div>
-
-            <dx-check-box [value]="false"></dx-check-box>
-            <div class="divider"> W </div>
-
-            <dx-check-box [value]="false"></dx-check-box>
-            <div class="divider"> Th </div>
-
-            <dx-check-box [value]="false"></dx-check-box>
-            <div class="divider"> F </div>
-
-            <dx-check-box [value]="false"></dx-check-box>
-            <div class="divider"> Sa </div>
-
-            <dx-check-box [value]="false"></dx-check-box>
-            <div class="divider"> Su </div>
-        </div>
-        <div class="dx-field" style="display: flex">
-            <div class="dx-field-label">Enrollment deadline </div>
-            <div class="dx-field-value">
-                <dx-date-box [value]="now" type="date"> </dx-date-box>
-            </div>
-            <div class="dx-field-value">
+            <div class="buttons-column" style="margin-top: 20px;">
+                <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120" (onClick)="click($event)">
+                </dx-button>
+                <div class="divider"></div>
+                <dx-button stylingMode="contained" text="Add" type="success" [width]="120" (onClick)="click($event)">
+                </dx-button>
             </div>
         </div>
-        <div class="buttons-column">
-            <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120" (onClick)="click($event)">
-            </dx-button>
-            <div class="divider"></div>
-            <dx-button stylingMode="contained" text="Add" type="success" [width]="120" (onClick)="click($event)">
-            </dx-button>
-        </div>
-
     </div>
 </dx-popup>
