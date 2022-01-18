@@ -1,0 +1,16 @@
+ul {
+  float: left;
+}
+ul a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-left: 100px;
+}
+.divider {
+  width: 17px;
+  height: auto;
+  display: inline-block;
+}

@@ -1,3 +1,4 @@
+import { OfferingService } from './../../service/program-offering.service';
 import { Service } from 'src/app/service/test.service';
 import { FormDetailService } from './../../service/program-form-detail.service';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PriorityEntity } from 'src/app/service/program-offering.service';
 import notify from 'devextreme/ui/notify';
+import { ProgramOfferingModel } from 'src/app/model/program-offering.model';
 @Component({
   selector: 'app-program-form-detail',
   templateUrl: './program-form-detail.component.html',
@@ -20,8 +22,12 @@ export class ProgramFormDetailComponent implements OnInit {
   priorities: string[];
   priorityEntities: PriorityEntity[];
 
+  popupVisible = false;
+  offering: ProgramOfferingModel[] | undefined;
+  now: Date = new Date();
 
-  constructor(private _activateRouteService: ActivatedRoute, Service: FormDetailService) {
+
+  constructor(private _activateRouteService: ActivatedRoute, Service: OfferingService) {
     this.simpleProducts = [];
     this.valueForEditableTextArea = "";
     this.valueChangeEvents = [{
@@ -38,6 +44,7 @@ export class ProgramFormDetailComponent implements OnInit {
       'Online',
     ];
     this.priorityEntities = Service.getPriorityEntities();
+
   }
 
   ngOnInit(): void {
@@ -46,6 +53,10 @@ export class ProgramFormDetailComponent implements OnInit {
       console.log('🚀 ~ id', id);
     });
   }
+  showAddOffering() {
+    this.popupVisible = true;
+    //...
+  }
   click = (e: any) => {
     const buttonText = e.component.option('text');
     notify(`The ${this.capitalize(buttonText)} button was clicked`);
@@ -53,3 +64,5 @@ export class ProgramFormDetailComponent implements OnInit {
 
 
 }
+
+
