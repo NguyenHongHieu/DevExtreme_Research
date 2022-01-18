@@ -2,12 +2,34 @@
     <div class="container-fluid">
         <h1 style="color: white;">Exprerience Registry</h1>
         <div class="d-flex text-white">
-            <i class="fa fa-user-circle fa-2x"></i>
+            <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
             <span class="p-1">Bob's Summer Camp</span>
         </div>
     </div>
 </div>
-<ng-content></ng-content>
+<div class="row">
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <i class="fa fa-line-chart" aria-hidden="true"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-laptop" aria-hidden="true"></i>
+                        Program Listings
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <ng-content></ng-content>
+    </main>
+</div>
 
 <!-- <dx-popover target="#link2" position="bottom" [width]="300" [showTitle]="true" title="Details:"
     [(visible)]="withTitleVisible">
