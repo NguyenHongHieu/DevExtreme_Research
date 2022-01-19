@@ -18,8 +18,9 @@ import {
   DxMenuModule,
   DxPopoverModule,
   DxListModule,
-  DxValidatorModule
-
+  DxValidatorModule,
+  DxDrawerModule,
+  DxScrollViewModule,
 } from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -52,7 +53,8 @@ const DEVEXTREME_MODULES = [
   DxPopoverModule,
   DxListModule,
   DxValidatorModule,
-
+  DxDrawerModule,
+  DxScrollViewModule,
 ];
 
 @NgModule({
@@ -67,13 +69,8 @@ const DEVEXTREME_MODULES = [
     HeaderComponent,
     NavbarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-
-    ...DEVEXTREME_MODULES,
-  ],
+  imports: [BrowserModule, AppRoutingModule, ...DEVEXTREME_MODULES],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
