@@ -1,0 +1,8 @@
+.container-fluid {
+  overflow: hidden;
+}
+.navbar {
+  position: sticky;
+  top: 10px;
+  z-index: 999;
+}

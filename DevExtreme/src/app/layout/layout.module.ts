@@ -7,23 +7,23 @@ import { HeaderComponent } from "./header/header.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 
 const routes: Routes = [
-    {
-        path: '',
-        redirectTo: 'header',
-        pathMatch: 'full',
-    },
-    {
-        path: 'header',
-        component: HeaderComponent,
-    },
-    {
-        path: 'navbar',
-        component: NavbarComponent,
-    },
-    {
-        path: '**',
-        component: NotFoundComponent,
-    },
+    // {
+    //     path: 'programs',
+    //     redirectTo: 'header',
+    //     pathMatch: 'full',
+    // },
+    // {
+    //     path: 'header',
+    //     component: HeaderComponent,
+    // },
+    // {
+    //     path: 'navbar',
+    //     component: NavbarComponent,
+    // },
+    // {
+    //     path: '**',
+    //     component: NotFoundComponent,
+    // },
 ];
 @NgModule({
     declarations: [],

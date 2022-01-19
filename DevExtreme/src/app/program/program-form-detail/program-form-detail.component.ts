@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PriorityEntity } from 'src/app/service/program-offering.service';
 import notify from 'devextreme/ui/notify';
-import { ProgramOfferingModel } from 'src/app/model/program-offering.model';
+import { ProgramOfferingVM } from 'src/app/model/program-offering.model';
 @Component({
   selector: 'app-program-form-detail',
   templateUrl: './program-form-detail.component.html',
@@ -23,7 +23,7 @@ export class ProgramFormDetailComponent implements OnInit {
   priorityEntities: PriorityEntity[];
 
   popupVisible = false;
-  offering: ProgramOfferingModel[] | undefined;
+  offering: ProgramOfferingVM[] | undefined;
   now: Date = new Date();
 
   namePattern: any = /^[^0-9]+$/;

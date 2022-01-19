@@ -1,6 +1,6 @@
 import { Injectable, INJECTOR } from "@angular/core";
 
-import { ProgramOfferingModel } from "../model/program-offering.model";
+import { ProgramOfferingVM } from "../model/program-offering.model";
 
 export class PriorityEntity {
     id: number;
@@ -24,7 +24,7 @@ const priorityEntities: PriorityEntity[] = [
     providedIn: 'root'
 })
 export class OfferingService {
-    private offering: ProgramOfferingModel[] = [
+    private offering: ProgramOfferingVM[] = [
     ]
     // getOffering(): ProgramOfferingModel[] {
 

@@ -1,5 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
-import { ProgramOfferingModel } from 'src/app/model/program-offering.model';
+import { ProgramOfferingVM } from 'src/app/model/program-offering.model';
 import { OfferingService, PriorityEntity } from 'src/app/service/program-offering.service';
 import notify from 'devextreme/ui/notify';
 
@@ -11,7 +12,7 @@ import notify from 'devextreme/ui/notify';
 export class ProgramOfferingComponent implements OnInit {
   capitalize = (text: string) => text.charAt(0).toUpperCase() + text.slice(1);
   popupVisible = true;
-  offering: ProgramOfferingModel[] | undefined;
+  offering: ProgramOfferingVM[] | undefined;
   priorities: string[];
   now: Date = new Date();
 
