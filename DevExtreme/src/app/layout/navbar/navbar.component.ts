@@ -8,24 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   menuItems = [
     {
-      text: 'Video Players',
+      text: 'Dashboard',
+      icon: 'fa fa-line-chart',
     },
     {
       text: 'Televisions',
-    },
-    {
-      text: 'Monitors',
-      items: [
-        {
-          text: 'DesktopLCD 19',
-        },
-        {
-          text: 'DesktopLCD 21',
-        },
-        {
-          text: 'DesktopLED 21',
-        },
-      ],
+      icon: 'fa fa-laptop',
     },
   ];
   constructor() {}
