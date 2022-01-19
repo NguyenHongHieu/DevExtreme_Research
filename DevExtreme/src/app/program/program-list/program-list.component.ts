@@ -19,9 +19,6 @@ export class ProgramListComponent implements OnInit {
 
   checkBoxesMode: string;
 
-
-
-
   contentReady = (e: any) => {
     if (!this.collapsed) {
       this.collapsed = true;

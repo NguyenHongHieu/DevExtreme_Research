@@ -26,6 +26,8 @@ export class ProgramFormDetailComponent implements OnInit {
   offering: ProgramOfferingModel[] | undefined;
   now: Date = new Date();
 
+  namePattern: any = /^[^0-9]+$/;
+
 
   constructor(private _activateRouteService: ActivatedRoute, Service: OfferingService) {
     this.simpleProducts = [];
@@ -53,7 +55,7 @@ export class ProgramFormDetailComponent implements OnInit {
       console.log('🚀 ~ id', id);
     });
   }
-  showAddOffering() {
+  showAddOffering(_e: any) {
     this.popupVisible = true;
     //...
   }

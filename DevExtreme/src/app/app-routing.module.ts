@@ -1,4 +1,5 @@
-import { NotFoundComponent } from './program/not-found/not-found.component';
+import { LayoutComponent } from './layout/layout.component';
+import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { ProgramOfferingComponent } from './program/program-offering/program-offering.component';
 import { ProgramListComponent } from './program/program-list/program-list.component';
 import { NgModule, Component } from '@angular/core';
@@ -8,29 +9,34 @@ import { ProgramFormDetailComponent } from './program/program-form-detail/progra
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'programlist',
-    pathMatch: 'full',
+    // redirectTo: 'programs',
+    // pathMatch: 'full',
+    loadChildren: () => import('./program/program.module').then((m) => m.programModule)
   },
   {
-    path: 'programlist',
-    component: ProgramListComponent,
+    path: 'header',
+    loadChildren: () => import('./layout/layout.module').then((m) => m.LayoutModule)
   },
-  {
-    path: 'programlist/add',
-    component: ProgramFormDetailComponent,
-  },
-  {
-    path: 'programlist/:id',
-    component: ProgramFormDetailComponent,
-  },
-  {
-    path: 'addOffering',
-    component: ProgramOfferingComponent,
-  },
-  {
-    path: '**',
-    component: NotFoundComponent,
-  },
+  // {
+  //   path: 'programs',
+  //   component: ProgramListComponent,
+  // },
+  // {
+  //   path: 'programs/add',
+  //   component: ProgramFormDetailComponent,
+  // },
+  // {
+  //   path: 'programs/:id',
+  //   component: ProgramFormDetailComponent,
+  // },
+  // {
+  //   path: 'offering/add',
+  //   component: ProgramOfferingComponent,
+  // },
+  // {
+  //   path: '**',
+  //   component: NotFoundComponent,
+  // },
 ];
 
 @NgModule({

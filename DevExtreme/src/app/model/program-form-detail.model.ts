@@ -31,3 +31,33 @@ export class ProgramFormDetailModel {
         this.addSkillsSelect = addSkillsSelect;
     }
 }
+
+export enum ProgramPeriodType {
+    Week,
+    Month,
+    Year
+}
+export class SkillVM {
+    name: string;
+    level: number;
+}
+
+// Correct model
+export class ProgramFormDetailVM {
+    public name: string;
+    public type: string;
+    public about: string;
+    public organization: string;
+    public website: string;
+    public level: string;
+    public ageGroup: number;
+    public careerPathway: string;
+    public periodType: ProgramPeriodType;
+    public periodLength: number;
+
+    public learningMethods: string;
+    public address: string; // Create Address VM
+    public skills: SkillVM[];
+
+    public offerings: OfferingVM[]; // Create OfferingVM
+}

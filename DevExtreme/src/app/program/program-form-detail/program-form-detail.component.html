@@ -1,9 +1,18 @@
 <div class="program">
+    <!-- Program form -->
     <div class="form">
         <div class="dx-field" style="display: flex;">
             <div class="dx-field-label">Program name</div>
             <div class="dx-field-value">
-                <dx-text-box value="John Smith"></dx-text-box>
+                <dx-text-box value="Peter">
+                    <dx-validator>
+                        <dxi-validation-rule type="required" message="Name is required"></dxi-validation-rule>
+                        <dxi-validation-rule type="pattern" [pattern]="namePattern"
+                            message="Do not use digits in the Name"></dxi-validation-rule>
+                        <dxi-validation-rule type="stringLength" [min]="2" message="Name must have at least 2 symbols">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
             </div>
         </div>
         <div class="dx-field" style="display: flex;">
@@ -58,7 +67,6 @@
                 <div class="divider"></div>
                 <dx-select-box placeholder="Week" [showClearButton]="true">
                 </dx-select-box>
-
             </div>
         </div>
         <div class="dx-field">
@@ -67,59 +75,78 @@
                 <dx-radio-group [items]="priorities" [value]="priorities[0]" layout="horizontal">
                 </dx-radio-group>
             </div>
-        </div>
-        <div class="dx-field">
-            <div class="dx-field-label"></div>
-            <div class="dx-field-value">
-                <dx-text-box placeholder="Streets address"></dx-text-box>
-            </div>
-
-            <div class="dx-field-value" style="display: flex; margin-top: 12px;">
-                <dx-text-box placeholder="City"></dx-text-box>
-                <div class="divider"></div>
-                <dx-text-box placeholder="State"></dx-text-box>
-                <div class="divider"></div>
-                <dx-text-box placeholder="Zip code"></dx-text-box>
-            </div>
 
             <div class="dx-field">
-                <div class="dx-field-label">Add skill</div>
-                <div class="dx-field-value" style="display: flex">
-                    <dx-text-box mask=""></dx-text-box>
+                <div class="dx-field-label"></div>
+                <div class="dx-field-value">
+                    <dx-text-box placeholder="Streets address"></dx-text-box>
+                </div>
+
+                <div class="dx-field-value" style="display: flex; margin-top: 12px;">
+                    <dx-text-box placeholder="City"></dx-text-box>
                     <div class="divider"></div>
-                    <dx-select-box mask="Week" [showClearButton]="true">
-                    </dx-select-box>
+                    <dx-text-box placeholder="State"></dx-text-box>
                     <div class="divider"></div>
-                    <dx-button stylingMode="contained" text="Cancel" type="success" [width]="120"
-                        (onClick)="click($event)">
-                    </dx-button>
+                    <dx-text-box placeholder="Zip code"></dx-text-box>
                 </div>
             </div>
+        </div>
+        <div class="dx-field" style="margin-top:20px">
+            <div class="dx-field-label">Add skill</div>
+            <div class="dx-field-value" style="display: flex">
+                <dx-text-box mask=""></dx-text-box>
+                <div class="divider"></div>
+                <dx-select-box mask="Week" [showClearButton]="true">
+                </dx-select-box>
+                <div class="divider"></div>
+
+                <dx-button stylingMode="contained" text="Cancel" type="success" [width]="120" (onClick)="click($event)">
+                </dx-button>
+            </div>
+        </div>
+        <div class="dx-field">
+            <div class="dx-field-label">Name</div>
+            <div class="dx-field-value">
+                <dx-text-box value="Peter">
+                    <dx-validator>
+                        <dxi-validation-rule type="required" message="Name is required"></dxi-validation-rule>
+                        <dxi-validation-rule type="pattern" [pattern]="namePattern"
+                            message="Do not use digits in the Name"></dxi-validation-rule>
+                        <dxi-validation-rule type="stringLength" [min]="2" message="Name must have at least 2 symbols">
+                        </dxi-validation-rule>
+                    </dx-validator>
+                </dx-text-box>
+            </div>
             <h1>Add Offering</h1>
-            <dx-button icon="add" text="add" class="button-info" text="Add offering" (onclick)="showAddOffering()">
-            </dx-button>
-        </div>
-    </div>
-    <div class="buttons-column" style="margin: 20px 20px 20px 20px">
-        <div style="float: left;">
-            <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120" (onClick)="click($event)">
+            <i class="far fa-map-marker-question"></i>
+            <dx-button icon="add" class="button-info" text="Add offering button" (onClick)="showAddOffering($event)">
             </dx-button>
         </div>
 
-        <div style="float: right;">
-            <dx-button stylingMode="contained" text="Preview" type="normal" [width]="120" (onClick)="click($event)">
-            </dx-button>
-            <div class="divider"></div>
-            <dx-button stylingMode="contained" text="Save for later" type="normal" [width]="120"
-                (onClick)="click($event)">
-            </dx-button>
-            <div class="divider"></div>
-            <dx-button stylingMode="contained" text="Published" type="success" [width]="120" (onClick)="click($event)">
-            </dx-button>
-        </div>
+        <div class="buttons-column" style="margin: 20px 20px 20px 20px">
+            <div style="float: left;">
+                <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120" (onClick)="click($event)">
+                </dx-button>
+            </div>
 
+            <div style="float: right;">
+                <dx-button stylingMode="contained" text="Preview" type="normal" [width]="120" (onClick)="click($event)">
+                </dx-button>
+                <div class="divider"></div>
+                <dx-button stylingMode="contained" text="Save for later" type="normal" [width]="120"
+                    (onClick)="click($event)">
+                </dx-button>
+                <div class="divider"></div>
+                <dx-button stylingMode="contained" text="Published" type="success" [width]="120"
+                    (onClick)="click($event)">
+                </dx-button>
+            </div>
+
+        </div>
     </div>
 </div>
+
+<!-- Offering popup -->
 <dx-popup [width]="500" [height]="700" [showTitle]="true" title="Add program Offering" [dragEnabled]="true"
     [closeOnOutsideClick]="true" [(visible)]="popupVisible">
     <div *dxTemplate="let data of 'content'">
