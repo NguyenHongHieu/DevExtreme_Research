@@ -1,20 +1,7 @@
 <!-- <nav class=" narbar col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"> -->
-<div class="narbar">
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-                <i class="fa fa-line-chart" aria-hidden="true"></i>
-                Dashboard
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <i class="fa fa-laptop" aria-hidden="true"></i>
-                Program Listings
-            </a>
-        </li>
-    </ul>
-    <dx-menu [items]="menuItems" displayExpr="text" orientation="orientation">
-    </dx-menu>
+<div class="menu-container">
+    <dx-tree-view [items]="items" keyExpr="path" [displayExpr]="'text'" selectionMode="single"
+        [focusStateEnabled]="false" expandEvent="click" (onItemClick)="onItemClick($event)" width="100%">
+    </dx-tree-view>
 </div>
 <!-- </nav> -->

@@ -1,11 +1,13 @@
 <app-header></app-header>
-<dx-drawer template="template" height="80vh" [minSize]="37" [opened]='true'>
-  <div *dxTemplate="let data of 'template'">
-    <div style="width: 150px">
-      <app-navbar></app-navbar>
+<div class="container-body">
+  <dx-drawer template="template" [minSize]="37" [opened]='true'>
+    <div *dxTemplate="let data of 'template'">
+      <div style="width: 300px">
+        <app-navbar></app-navbar>
+      </div>
     </div>
-  </div>
-  <dx-scroll-view class="content" direction="vertical">
-    <router-outlet></router-outlet>
-  </dx-scroll-view>
-</dx-drawer>
+    <dx-scroll-view class="content" direction="vertical">
+      <router-outlet></router-outlet>
+    </dx-scroll-view>
+  </dx-drawer>
+</div>

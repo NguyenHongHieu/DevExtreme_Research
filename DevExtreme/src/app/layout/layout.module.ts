@@ -5,6 +5,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { DxTreeViewModule } from "devextreme-angular";
 
 const routes: Routes = [
     // {

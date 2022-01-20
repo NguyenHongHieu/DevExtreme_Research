@@ -21,6 +21,7 @@ import {
   DxValidatorModule,
   DxDrawerModule,
   DxScrollViewModule,
+  DxTreeViewModule,
 } from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,6 +56,7 @@ const DEVEXTREME_MODULES = [
   DxValidatorModule,
   DxDrawerModule,
   DxScrollViewModule,
+  DxTreeViewModule
 ];
 
 @NgModule({
@@ -73,4 +75,4 @@ const DEVEXTREME_MODULES = [
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
