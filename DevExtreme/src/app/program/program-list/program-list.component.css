@@ -30,3 +30,6 @@ ul a {
 .nav-link {
   font-weight: bold;
 }
+.navbar {
+  border-bottom: groove;
+}
