@@ -33,6 +33,8 @@ import { SearchFormComponent } from './shared/search-form/search-form.component'
 // import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { NavbarComponent } from './layout/navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { FooterComponent } from './footer/footer.component';
 
 const DEVEXTREME_MODULES = [
   DxDateBoxModule,
@@ -70,6 +72,8 @@ const DEVEXTREME_MODULES = [
     // LayoutComponent,
     HeaderComponent,
     NavbarComponent,
+    DashboardComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ...DEVEXTREME_MODULES],
   providers: [],

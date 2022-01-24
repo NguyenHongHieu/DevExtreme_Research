@@ -14,3 +14,19 @@ ul a {
   height: auto;
   display: inline-block;
 }
+.content {
+  padding-bottom: 200px;
+}
+.divider {
+  width: 200px;
+  height: auto;
+  display: inline-block;
+  margin-left: 5px;
+}
+.a:hover.nav-link {
+  border-bottom: 1px;
+  text-decoration: underline;
+}
+.nav-link {
+  font-weight: bold;
+}

@@ -15,10 +15,20 @@
 .form {
   border-style: groove;
   margin: auto;
-  width: 800px;
-  height: 900px;
+  width: 1200px;
+  height: 1000px;
   padding: 30px 30px 35px 20px;
 }
 .dx-field {
   margin-top: 12px;
+}
+.addOffering {
+  text-decoration: inherit;
+}
+.formSize {
+  width: 800px;
+  height: 600px;
+}
+.addOffering {
+  border-bottom: solid;
 }

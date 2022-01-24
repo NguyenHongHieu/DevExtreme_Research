@@ -1,122 +1,133 @@
+<a class="nav-item nav-link" [routerLink]="['/programs']" routerLinkActive="active"><i
+        class="dx-icon-chevronprev"></i>Back
+    to
+    programs
+</a>
 <div class="program">
+
     <!-- Program form -->
     <div class="form">
-        <div class="dx-field" style="display: flex;">
-            <div class="dx-field-label">Program name</div>
-            <div class="dx-field-value">
-                <dx-text-box value="Peter">
-                    <dx-validator>
-                        <dxi-validation-rule type="required" message="Name is required"></dxi-validation-rule>
-                        <dxi-validation-rule type="pattern" [pattern]="namePattern"
-                            message="Do not use digits in the Name"></dxi-validation-rule>
-                        <dxi-validation-rule type="stringLength" [min]="2" message="Name must have at least 2 symbols">
-                        </dxi-validation-rule>
-                    </dx-validator>
-                </dx-text-box>
+        <div class="formSize">
+            <div class="dx-field" style="display: flex;">
+                <div class="dx-field-label">Program name</div>
+                <div class="dx-field-value">
+                    <dx-text-box value="Peter">
+                        <dx-validator>
+                            <dxi-validation-rule type="required" message="Name is required"></dxi-validation-rule>
+                            <dxi-validation-rule type="pattern" [pattern]="namePattern"
+                                message="Do not use digits in the Name"></dxi-validation-rule>
+                            <dxi-validation-rule type="stringLength" [min]="2"
+                                message="Name must have at least 2 symbols">
+                            </dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-box>
+                </div>
             </div>
-        </div>
-        <!-- <div class="dx-field" style="display: flex;">
+            <!-- <div class="dx-field" style="display: flex;">
             <div class="dx-field-label">Program type</div>
             <div class="dx-field-value">
                 <dx-select-box [items]="simpleProducts"></dx-select-box>
             </div>
         </div> -->
-        <div class="dx-field">
-            <div class="dx-field-label">Program type</div>
-            <div class="dx-field-value">
-                <dx-select-box [dataSource]="simpleProducts">
-                    <dx-validator>
-                        <dxi-validation-rule type="required" message="Program type is required"></dxi-validation-rule>
-                    </dx-validator>
-                </dx-select-box>
+            <div class="dx-field">
+                <div class="dx-field-label">Program type</div>
+                <div class="dx-field-value">
+                    <dx-select-box [dataSource]="simpleProducts">
+                        <dx-validator>
+                            <dxi-validation-rule type="required" message="Program type is required">
+                            </dxi-validation-rule>
+                        </dx-validator>
+                    </dx-select-box>
+                </div>
             </div>
-        </div>
-        <div>
+            <div>
+                <div class="dx-field" style="display: flex;">
+                    <div class="dx-field-label">About this program</div>
+                    <dx-text-area class="dx-field-value" [height]="90" [(value)]="valueForEditableTextArea"
+                        [valueChangeEvent]="eventValue">
+                        <dx-validator>
+                            <dxi-validation-rule type="required" message="About this program is required">
+                            </dxi-validation-rule>
+
+                            <dxi-validation-rule type="stringLength" [min]="2"
+                                message="Name must have at least 2 symbols">
+                            </dxi-validation-rule>
+                        </dx-validator>
+                    </dx-text-area>
+                    <br>
+                </div>
+            </div>
             <div class="dx-field" style="display: flex;">
-                <div class="dx-field-label">About this program</div>
-                <dx-text-area class="dx-field-value" [height]="90" [(value)]="valueForEditableTextArea"
-                    [valueChangeEvent]="eventValue">
-                    <dx-validator>
-                        <dxi-validation-rule type="required" message="About this program is required">
-                        </dxi-validation-rule>
+                <div class="dx-field-label">Organization name</div>
+                <div class="dx-field-value">
+                    <dx-select-box [dataSource]="simpleProducts">
+                        <dx-validator>
+                            <dxi-validation-rule type="required" message="Program type is required">
+                            </dxi-validation-rule>
+                        </dx-validator>
+                    </dx-select-box>
+                </div>
+            </div>
+            <div class="dx-field" style="display: flex; ">
+                <div class="dx-field-label">Website</div>
+                <dx-validator>
+                    <dxi-validation-rule type="required" message="Enter in the URL to this program">
+                    </dxi-validation-rule>
 
-                        <dxi-validation-rule type="stringLength" [min]="2" message="Name must have at least 2 symbols">
-                        </dxi-validation-rule>
-                    </dx-validator>
-                </dx-text-area>
-                <br>
+                    <dxi-validation-rule type="stringLength" [min]="2" message="Name must have at least 2 symbols">
+                    </dxi-validation-rule>
+                </dx-validator>
             </div>
-        </div>
-        <div class="dx-field" style="display: flex;">
-            <div class="dx-field-label">Organization name</div>
-            <div class="dx-field-value">
-                <dx-select-box [dataSource]="simpleProducts">
-                    <dx-validator>
-                        <dxi-validation-rule type="required" message="Program type is required"></dxi-validation-rule>
-                    </dx-validator>
-                </dx-select-box>
+            <div class="dx-field" style="display: flex;">
+                <div class="dx-field-label">Program level</div>
+                <div class="dx-field-value">
+                    <dx-select-box [dataSource]="simpleProducts">
+                        <dx-validator>
+                            <dxi-validation-rule type="required" message="Program type is required">
+                            </dxi-validation-rule>
+                        </dx-validator>
+                    </dx-select-box>
+                </div>
             </div>
-        </div>
-        <div class="dx-field" style="display: flex; ">
-            <div class="dx-field-label">Website</div>
-            <dx-validator>
-                <dxi-validation-rule type="required" message="Enter in the URL to this program">
-                </dxi-validation-rule>
-
-                <dxi-validation-rule type="stringLength" [min]="2" message="Name must have at least 2 symbols">
-                </dxi-validation-rule>
-            </dx-validator>
-        </div>
-        <div class="dx-field" style="display: flex;">
-            <div class="dx-field-label">Program level</div>
-            <div class="dx-field-value">
-                <dx-select-box [dataSource]="simpleProducts">
-                    <dx-validator>
-                        <dxi-validation-rule type="required" message="Program type is required"></dxi-validation-rule>
-                    </dx-validator>
-                </dx-select-box>
+            <div class="dx-field">
+                <div class="dx-field-label">Default mode</div>
+                <div class="dx-field-value">
+                    <dx-range-slider [min]="0" [max]="100" [start]="20" [end]="60"></dx-range-slider>
+                </div>
             </div>
-        </div>
-        <div class="dx-field">
-            <div class="dx-field-label">Default mode</div>
-            <div class="dx-field-value">
-                <dx-range-slider [min]="0" [max]="100" [start]="20" [end]="60"></dx-range-slider>
+            <div class="dx-field" style="display: flex;">
+                <div class="dx-field-label">Carrer pathway</div>
+                <div class="dx-field-value">
+                    <dx-select-box [items]="simpleProducts"></dx-select-box>
+                </div>
             </div>
-        </div>
-        <div class="dx-field" style="display: flex;">
-            <div class="dx-field-label">Carrer pathway</div>
-            <div class="dx-field-value">
-                <dx-select-box [items]="simpleProducts"></dx-select-box>
+            <div class="dx-field" style="display: flex">
+                <div class="dx-field-label">Program length</div>
+                <div class="dx-field-value" style="display: flex">
+                    <dx-text-box mask=""></dx-text-box>
+                    <div class="divider"></div>
+                    <dx-select-box placeholder="Week" [showClearButton]="true">
+                    </dx-select-box>
+                </div>
             </div>
-        </div>
-        <div class="dx-field" style="display: flex">
-            <div class="dx-field-label">Program length</div>
-            <div class="dx-field-value" style="display: flex">
-                <dx-text-box mask=""></dx-text-box>
-                <div class="divider"></div>
-                <dx-select-box placeholder="Week" [showClearButton]="true">
-                </dx-select-box>
-            </div>
-        </div>
-        <div class="dx-field">
-            <div class="dx-field-label">Learning methods</div>
-            <div class="dx-field-value">
+            <div class="dx-field">
+                <div class="dx-field-label">Learning methods</div>
                 <dx-radio-group [items]="priorities" [value]="priorities[0]" layout="horizontal">
                 </dx-radio-group>
-            </div>
 
-            <div class="dx-field">
-                <div class="dx-field-label"></div>
-                <div class="dx-field-value">
-                    <dx-text-box placeholder="Streets address"></dx-text-box>
-                </div>
+                <div class="dx-field">
+                    <div class="dx-field-label"></div>
+                    <div class="dx-field-value">
+                        <dx-text-box placeholder="Streets address"></dx-text-box>
+                    </div>
 
-                <div class="dx-field-value" style="display: flex; margin-top: 12px;">
-                    <dx-text-box placeholder="City"></dx-text-box>
-                    <div class="divider"></div>
-                    <dx-text-box placeholder="State"></dx-text-box>
-                    <div class="divider"></div>
-                    <dx-text-box placeholder="Zip code"></dx-text-box>
+                    <div class="dx-field-value" style="display: flex; margin-top: 12px;">
+                        <dx-text-box placeholder="City"></dx-text-box>
+                        <div class="divider"></div>
+                        <dx-text-box placeholder="State"></dx-text-box>
+                        <div class="divider"></div>
+                        <dx-text-box placeholder="Zip code"></dx-text-box>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,16 +151,20 @@
                     <dx-validator>
                         <dxi-validation-rule type="required" message="Name is required"></dxi-validation-rule>
                         <dxi-validation-rule type="pattern" [pattern]="namePattern"
-                            message="Do not use digits in the Name"></dxi-validation-rule>
+                            message="Do not use digits in the Name">
+                        </dxi-validation-rule>
                         <dxi-validation-rule type="stringLength" [min]="2" message="Name must have at least 2 symbols">
                         </dxi-validation-rule>
                     </dx-validator>
                 </dx-text-box>
             </div>
-            <h1>Add Offering</h1>
-            <i class="far fa-map-marker-question"></i>
-            <dx-button icon="add" class="button-info" text="Add offering button" (onClick)="showAddOffering($event)">
-            </dx-button>
+            <div>
+                <h1 class="addOffering">Add Offering</h1>
+                <i class="fas fa-plus"></i>
+                <dx-button icon="add" class="button-info" text="Add offering button"
+                    (onClick)="showAddOffering($event)">
+                </dx-button>
+            </div>
         </div>
 
         <div class="buttons-column" style="margin: 20px 20px 20px 20px">
@@ -170,9 +185,9 @@
                     (onClick)="click($event)">
                 </dx-button>
             </div>
-
         </div>
     </div>
+
 </div>
 
 <!-- Offering popup -->

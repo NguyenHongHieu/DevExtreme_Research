@@ -1,5 +1,4 @@
 import { ProgramOfferingVM } from 'src/app/model/program-offering.model';
-import { off } from "devextreme/events";
 import { ProgramPeriodType } from "../shared/search-form/ProgramPeriodType";
 import { SkillVM } from "../shared/search-form/SkillVM";
 

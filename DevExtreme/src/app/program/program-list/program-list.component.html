@@ -1,22 +1,28 @@
-<div>
+<div class="content">
     <div>
-        <p>Programs</p>
+        <p style="font-weight: bold; font-size: larger;">Programs</p>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <ul class="nav-item active">
                         <a class="nav-link" href="#">Active </a>
                     </ul>
+                    <div class="divider"></div>
                     <ul class="nav-item">
                         <a class="nav-link" href="#">Inactive</a>
                     </ul>
+                    <div class="divider"></div>
                     <ul class="nav-item">
-                        <a class="nav-link disabled" href="#">Unpublish</a>
+                        <a class="nav-link " href="#">Unpublish</a>
                     </ul>
-
+                    <div class="divider"></div>
                 </ul>
-                <dx-button style="float: right;" stylingMode="contained" text="Add New" type="success" [width]="120">
-                </dx-button>
+
+                <a [href]="'programs/01'">
+                    <dx-button style="float: right;" stylingMode="contained" text="Add New" type="success"
+                        [width]="120">
+                    </dx-button>
+                </a>
             </div>
         </nav>
 
@@ -27,16 +33,13 @@
                 <dx-select-box displayExpr="Name" valueExpr="ID"></dx-select-box>
             </div>
         </div>
-        <div class="divider"></div>
         <div class="list-container">
             <dx-list #list [searchEnabled]="true" searchExpr="Name" searchMode="contains">
             </dx-list>
         </div>
         <div class="divider"></div>
         <div class="dx-field">
-
             <dx-select-box displayExpr="Name" valueExpr="ID"></dx-select-box>
-
         </div>
     </div>
 

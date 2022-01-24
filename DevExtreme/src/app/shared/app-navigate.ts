@@ -1,12 +1,17 @@
 export const navigation = [
     {
         text: 'Dashboard',
-        path: 'programs',
+        path: 'dashboard',
         icon: 'fa fa-line-chart'
     },
+    // {
+    //     text: 'Program listings',
+    //     icon: 'fa fa-laptop',
+    //     path: 'programs/add',
+    // },
     {
-        text: 'Televisions',
+        text: 'Program listings',
         icon: 'fa fa-laptop',
-        path: 'television',
+        path: 'programs',
     }
 ];

@@ -1,3 +1,4 @@
+import { DashboardComponent } from './../dashboard/dashboard.component';
 import { ProgramListComponent } from './program-list/program-list.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'programs/:id',
         component: ProgramFormDetailComponent,
+    },
+    {
+        path: 'dashboard',
+        component: DashboardComponent,
     },
 ];
 @NgModule({
