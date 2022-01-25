@@ -1,35 +1,28 @@
-import { NotFoundComponent } from "./not-found/not-found.component";
+import { FooterComponent } from './../footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LayoutComponent } from './layout.component';
 
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { HeaderComponent } from "./header/header.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { DxTreeViewModule } from "devextreme-angular";
+import { DEVEXTREME_MODULES } from '../app.module';
 
-const routes: Routes = [
-    // {
-    //     path: 'programs',
-    //     redirectTo: 'header',
-    //     pathMatch: 'full',
-    // },
-    // {
-    //     path: 'header',
-    //     component: HeaderComponent,
-    // },
-    // {
-    //     path: 'navbar',
-    //     component: NavbarComponent,
-    // },
-    // {
-    //     path: '**',
-    //     component: NotFoundComponent,
-    // },
+const COMPONENTS = [
+    NavbarComponent,
+    HeaderComponent,
+    LayoutComponent,
+    FooterComponent
 ];
+
 @NgModule({
-    declarations: [],
-    imports: [CommonModule, RouterModule.forChild(routes)],
-    exports: [],
+    declarations: [...COMPONENTS],
+    imports: [
+        CommonModule,
+        RouterModule,
+        ...DEVEXTREME_MODULES
+    ],
+    exports: [...COMPONENTS],
     providers: [],
 })
 export class LayoutModule { }

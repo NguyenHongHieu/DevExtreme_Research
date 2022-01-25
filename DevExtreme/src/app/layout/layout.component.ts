@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -11,12 +12,23 @@ export class LayoutComponent implements OnInit {
   listData: any;
   withTitleVisible: boolean;
 
-  constructor() {
+
+  isFooterVisible: boolean = true;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+
     this.withTitleVisible = false;
+
+
   }
 
   ngOnInit(): void {
+    // 1. Google Angular Router and ActivatedRoute to detect current url and show/hide for footer
+
+    // this.activatedRoute.params.subscribe(url => {
+    //   console.log(url);
+    // });
   }
+
   navSelectionChanged(e: any) {
     this.currentData = this.listData[e.itemIndex].data;
   }

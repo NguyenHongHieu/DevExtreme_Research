@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
@@ -30,13 +31,9 @@ import { ProgramFormDetailComponent } from './program/program-form-detail/progra
 import { ProgramOfferingComponent } from './program/program-offering/program-offering.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { SearchFormComponent } from './shared/search-form/search-form.component';
-// import { LayoutComponent } from './layout/layout.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { NavbarComponent } from './layout/navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { FooterComponent } from './footer/footer.component';
 
-const DEVEXTREME_MODULES = [
+export const DEVEXTREME_MODULES = [
   DxDateBoxModule,
   DxBulletModule,
   DxButtonModule,
@@ -69,13 +66,13 @@ const DEVEXTREME_MODULES = [
     ProgramOfferingComponent,
     NotFoundComponent,
     SearchFormComponent,
-    // LayoutComponent,
-    HeaderComponent,
-    NavbarComponent,
-    DashboardComponent,
-    FooterComponent,
+    DashboardComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ...DEVEXTREME_MODULES],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+    ...DEVEXTREME_MODULES],
   providers: [],
   bootstrap: [AppComponent],
 })
