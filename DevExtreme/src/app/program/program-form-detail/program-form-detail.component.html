@@ -130,15 +130,17 @@
                     <div class="divider"></div>
                     <dx-select-box> </dx-select-box>
                     <div class="divider"></div>
-                    <dx-button stylingMode="contained" text="Cancel" type="success" [width]="120"
-                        (onClick)="click($event)">
+                    <dx-button icon="help" style="margin-right:10px">
+                    </dx-button>
+                    <dx-button stylingMode="contained" text="Cancel" type="success" [width]="200"
+                        style="margin-right:115px" (onClick)="click($event)">
                     </dx-button>
                 </div>
 
                 <div class="dx-field">
                     <div class="dx-field-label">Name</div>
                     <div class="dx-field-value">
-                        <dx-text-box value="Peter">
+                        <dx-text-box value="Peter" width="430px">
                             <dx-validator>
                                 <dxi-validation-rule type="required" message="Name is required"></dxi-validation-rule>
                                 <dxi-validation-rule type="pattern" [pattern]="namePattern"
