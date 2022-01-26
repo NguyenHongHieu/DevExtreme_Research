@@ -1,49 +1,71 @@
 <div class="content">
-    <div>
-        <p style="font-weight: bold; font-size: larger;">Programs</p>
+    <div class="menu">
+        <p>Programs</p>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <ul class="nav-item active">
-                        <a class="nav-link" href="#">Active </a>
+                        <!-- <a class="nav-link" href="#">Active() </a> -->
+                        <span>Active()</span>
                     </ul>
                     <div class="divider"></div>
                     <ul class="nav-item">
-                        <a class="nav-link" href="#">Inactive</a>
+                        <!-- <a class="nav-link" href="#">Inactive()</a> -->
+                        <span>Inactive()</span>
                     </ul>
                     <div class="divider"></div>
                     <ul class="nav-item">
-                        <a class="nav-link " href="#">Unpublish</a>
+                        <span>Unpublish()</span>
+                        <!-- <a class="nav-link " href="#">Unpublish()</a> -->
                     </ul>
-                    <div class="divider"></div>
+                    <div class="dividers"></div>
                 </ul>
-
+                <!-- <a  [href]="'orders/' + item.id"> -->
                 <a [href]="'programs/01'">
-                    <dx-button style="float: right;" stylingMode="contained" text="Add New" type="success" icon="add"
-                        [width]="150">
+                    <dx-button style="float: right; margin-left: 370px;" stylingMode="contained" text="Add New"
+                        type="success" icon="add" [width]="150">
                     </dx-button>
                 </a>
             </div>
         </nav>
-
     </div>
-    <div class="selection" style="margin-top: 100px; display: flex">
+    <div class="selection">
         <div class="dx-field">
             <div class="dx-field-value">
-                <dx-select-box displayExpr="Name" valueExpr="ID"></dx-select-box>
+                <dx-select-box displayExpr="Name" valueExpr="ID" placeholder="Action on () select" width="200px">
+                </dx-select-box>
             </div>
         </div>
-        <div class="list-container">
-            <dx-list #list [searchEnabled]="true" searchExpr="Name" searchMode="contains">
+        <div class="list-container" style=" margin-left: 150px;">
+            <dx-list #list [searchEnabled]="true">
             </dx-list>
         </div>
-        <div class="divider"></div>
-        <div class="dx-field">
-            <dx-select-box displayExpr="Name" valueExpr="ID"></dx-select-box>
+        <div class="fillter">
+            <div class="dx-field" style="margin-top: 7px;">Fillter by</div>
+            <div class="divider"></div>
+            <div class="dx-field">
+                <dx-select-box displayExpr="Name" valueExpr="ID" placeholder="All organizations" width="200px">
+                </dx-select-box>
+            </div>
         </div>
+
     </div>
 
-    <dx-data-grid id="grid-container" keyExpr="orderId" [showBorders]="true">
+    <div class="table">
+        <dx-data-grid id="gridContainer" [dataSource]="dataSource" [remoteOperations]="false"
+            [allowColumnReordering]="true" [rowAlternationEnabled]="true" [showBorders]="true"
+            (onContentReady)="contentReady($event)">
+            <dxi-column dataField="name"></dxi-column>
+            <dxi-column dataField="offering"></dxi-column>
+            <dxi-column dataField="publishedBy" dataType="string"></dxi-column>
+            <dxi-column dataField="views" dataType="string"></dxi-column>
+            <dxi-column dataField="Action" dataType="string"></dxi-column>
+        </dx-data-grid>
+    </div>
+</div>
+
+
+<!-- <dx-data-grid id="grid-container" keyExpr="orderId" [showBorders]="true">
         <dxo-selection [selectAllMode]="allMode" [showCheckBoxesMode]="checkBoxesMode" mode="multiple"></dxo-selection>
         <dxo-paging [pageSize]="10"></dxo-paging>
         <dxo-filter-row [visible]="true"></dxo-filter-row>
@@ -52,10 +74,10 @@
         <dxi-column dataField="Published by" [width]="180"></dxi-column>
         <dxi-column dataField="Published on" dataType="date"></dxi-column>
         <dxi-column dataField="View"></dxi-column>
-    </dx-data-grid>
+    </dx-data-grid> -->
 
 
-    <!-- <dx-data-grid id="gridContainer" [dataSource]="dataSource" [remoteOperations]="false" [allowColumnReordering]="true"
+<!-- <dx-data-grid id="gridContainer" [dataSource]="dataSource" [remoteOperations]="false" [allowColumnReordering]="true"
     [rowAlternationEnabled]="true" [showBorders]="true" (onContentReady)="contentReady($event)">
     <dxo-paging [pageSize]="10"></dxo-paging>
     <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[10, 25, 50, 100]"></dxo-pager>
@@ -89,22 +111,4 @@
             </dx-bullet>
         </div>
     </div>
-</dx-data-grid> -->
-</div>
-
-
-<!-- <div>
-    <span>Active </span>
-    <span>Inactive </span>
-    <span>Unpulished </span>
-</div>
-
-
-<dx-data-grid id="gridContainer" [dataSource]="dataSource" [remoteOperations]="false" [allowColumnReordering]="true"
-    [rowAlternationEnabled]="true" [showBorders]="true" (onContentReady)="contentReady($event)">
-    <dxi-column dataField="name"></dxi-column>
-    <dxi-column dataField="offering"></dxi-column>
-    <dxi-column dataField="publishedBy" dataType="string"></dxi-column>
-
-    <dxi-column dataField="views" dataType="string"></dxi-column>
 </dx-data-grid> -->

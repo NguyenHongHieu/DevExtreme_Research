@@ -1,3 +1,9 @@
+.detail {
+  margin-top: 30px;
+}
+.program {
+  width: 100%;
+}
 .options {
   padding: 20px;
   position: absolute;
@@ -14,21 +20,34 @@
 }
 .form {
   border-style: groove;
-  margin: auto;
-  width: 1200px;
-  height: 1000px;
-  padding: 30px 30px 35px 20px;
+  margin: 0 200px 200px 200px;
+  width: 60%;
+  height: 110vh;
+  /* padding: 30px 30px 35px 20px; */
 }
 .dx-field {
   margin-top: 12px;
 }
-.addOffering {
-  text-decoration: inherit;
-}
 .formSize {
   width: 800px;
   height: 600px;
+  margin-left: 15px;
 }
 .addOffering {
   border-bottom: solid;
+}
+.buttons-column {
+  width: 70%;
+  margin-left: 150px;
+}
+.skill {
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.skill-field-value {
+  display: flex;
+}
+
+.program-offering {
+  margin-top: 100px;
 }

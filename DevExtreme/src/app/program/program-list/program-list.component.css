@@ -1,3 +1,8 @@
+.content {
+  margin-left: 100px;
+  margin-top: 30px;
+  height: 100%;
+}
 ul {
   float: left;
 }
@@ -14,10 +19,8 @@ ul a {
   height: auto;
   display: inline-block;
 }
-.content {
-  padding-bottom: 200px;
-}
-.divider {
+
+.dividers {
   width: 200px;
   height: auto;
   display: inline-block;
@@ -25,11 +28,35 @@ ul a {
 }
 .a:hover.nav-link {
   border-bottom: 1px;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .nav-link {
   font-weight: bold;
 }
 .navbar {
+  width: 80%;
   border-bottom: groove;
+}
+.selection {
+  /* margin-top: 50px; */
+  display: flex;
+  margin: 50px 50px 50px -80px;
+}
+.fillter {
+  height: auto;
+  display: flex;
+  margin-left: 300px;
+}
+span {
+  font-weight: bold;
+}
+p {
+  font-weight: bold;
+  font-size: larger;
+}
+.table {
+  width: 80%;
+}
+.nav-link {
+  color: black;
 }

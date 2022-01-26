@@ -1,21 +1,20 @@
-<!-- Header -->
-<!-- <div class="navbar navbar-dark shadow-sm" style="background: linear-gradient(#3A1661, #543082)">
-    <div class="container-fluid">
-        <h1 style="color: white;">Exprerience Registry</h1>
-        <div class="d-flex text-white">
-            <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
-            <span class="p-1">Bob's Summer Camp</span>
-        </div>
-    </div>
-</div> -->
 <app-header></app-header>
-
 <!-- Navbar + body -->
 <div class="row">
-    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav class="navbar col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3">
             <app-navbar></app-navbar>
-            <!-- <ul class="nav flex-column">
+        </div>
+    </nav>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <dx-scroll-view>
+            <router-outlet></router-outlet>
+        </dx-scroll-view>
+    </main>
+</div>
+<app-footer *ngIf="isFooterVisible"></app-footer>
+
+<!-- <ul class="nav flex-column">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">
                         <i class="fa fa-line-chart" aria-hidden="true"></i>
@@ -29,12 +28,3 @@
                     </a>
                 </li>
             </ul> -->
-        </div>
-    </nav>
-
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <router-outlet></router-outlet>
-    </main>
-
-</div>
-<app-footer *ngIf="isFooterVisible"></app-footer>
