@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DxBulletComponent } from 'devextreme-angular';
-import { DxiColumnComponent, DxoSearchPanelComponent } from 'devextreme-angular/ui/nested';
-import { DxoMarginComponent } from 'devextreme-angular/ui/nested';
-import DataSource from 'devextreme/data/data_source';
 import { Service } from 'src/app/service/test.service';
 import themes from 'devextreme/ui/themes';
 import { ProgramListVM } from 'src/app/model/program-list.model';
@@ -20,6 +16,10 @@ export class ProgramListComponent implements OnInit {
     new ProgramListVM('In to javascript 3', '3 offers', 'Hieu', 3),
     new ProgramListVM('In to javascript 4', '3 offers', 'Hieu', 3)
   ];
+
+  ActionOnSelect: string[];
+  AllOrganizations: string[];
+  Program: string[];
 
   currentProduct: any;
   collapsed = false;

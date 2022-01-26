@@ -32,19 +32,19 @@
     <div class="selection">
         <div class="dx-field">
             <div class="dx-field-value">
-                <dx-select-box displayExpr="Name" valueExpr="ID" placeholder="Action on () select" width="200px">
+                <dx-select-box placeholder="Action on () select" width="200px" [items]="ActionOnSelect">
                 </dx-select-box>
             </div>
         </div>
         <div class="list-container" style=" margin-left: 150px;">
-            <dx-list #list [searchEnabled]="true">
+            <dx-list #list [searchEnabled]="true" [dataSource]="Program">
             </dx-list>
         </div>
         <div class="fillter">
             <div class="dx-field" style="margin-top: 7px;">Fillter by</div>
             <div class="divider"></div>
             <div class="dx-field">
-                <dx-select-box displayExpr="Name" valueExpr="ID" placeholder="All organizations" width="200px">
+                <dx-select-box width="200px" [items]="AllOrganizations">
                 </dx-select-box>
             </div>
         </div>
