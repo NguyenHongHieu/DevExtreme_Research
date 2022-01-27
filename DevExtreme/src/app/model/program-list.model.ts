@@ -14,3 +14,19 @@ export class ProgramListVM {
 
 
 }
+export class Active {
+    id: number;
+
+    text: string;
+
+
+
+    content: string;
+
+    constructor(id: number, text: string, content: string) {
+        this.id = id;
+        this.text = text;
+        this.content = content;
+
+    }
+}

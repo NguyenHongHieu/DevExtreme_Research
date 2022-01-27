@@ -24,6 +24,7 @@ import {
   DxScrollViewModule,
   DxTreeViewModule,
   DxNumberBoxModule,
+  DxTabsModule,
 } from 'devextreme-angular';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,7 +58,8 @@ export const DEVEXTREME_MODULES = [
   DxDrawerModule,
   DxScrollViewModule,
   DxTreeViewModule,
-  DxNumberBoxModule
+  DxNumberBoxModule,
+  DxTabsModule
 ];
 
 @NgModule({

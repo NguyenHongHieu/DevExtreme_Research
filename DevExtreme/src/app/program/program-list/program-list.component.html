@@ -3,28 +3,29 @@
         <p>Programs</p>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="d-flex justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <!-- <ul class="navbar-nav mr-auto">
                     <ul class="nav-item active">
-                        <!-- <a class="nav-link" href="#">Active() </a> -->
                         <span>Active()</span>
                     </ul>
                     <div class="divider"></div>
                     <ul class="nav-item">
-                        <!-- <a class="nav-link" href="#">Inactive()</a> -->
                         <span>Inactive()</span>
                     </ul>
                     <div class="divider"></div>
                     <ul class="nav-item">
                         <span>Unpublish()</span>
-                        <!-- <a class="nav-link " href="#">Unpublish()</a> -->
                     </ul>
                     <div class="dividers"></div>
-                </ul>
+                </ul> -->
+                <div id="tab" style="float:left;">
+                    <dx-tabs #apiTabs [dataSource]="active" [selectedIndex]="0" [width]="400"></dx-tabs>
+                </div>
                 <dx-button stylingMode="contained" text="Add New" (onClick)="navigateToAddNew($event)" type="success"
                     icon="add" [width]="150">
                 </dx-button>
             </div>
         </nav>
+
     </div>
     <div class="selection">
         <div class="dx-field">
@@ -42,7 +43,8 @@
             <div class="dx-field" style="margin-top: 7px;">Fillter by</div>
             <div class="divider"></div>
             <div class="dx-field">
-                <dx-select-box width="200px" [items]="allOrganizations">
+                <dx-select-box width="200px" [items]="fillterbyselect" [(value)]="fillterbyselect"
+                    placeholder="All organizations" [displayExpr]="'name'" (onSelectionChanged)="onFillterBy($event)">
                 </dx-select-box>
             </div>
         </div>

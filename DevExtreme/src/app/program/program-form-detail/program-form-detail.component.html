@@ -1,5 +1,5 @@
 <div class="detail">
-    <a class="nav-item nav-link" [routerLink]="['/programs']" routerLinkActive="active"><i
+    <a class="nav-item nav-link" style="color: black;" [routerLink]="['/programs']" routerLinkActive="active"><i
             class="dx-icon-chevronprev"></i>Back to programs
     </a>
     <div class="program">
@@ -100,7 +100,8 @@
                     <div class="dx-field" style="display: flex">
                         <div class="dx-field-label">Carrer pathway</div>
                         <div class="dx-field-value">
-                            <dx-select-box [items]="simpleProducts" [width]="200"></dx-select-box>
+                            <dx-select-box [items]="simpleProducts" placeholder="Select an industry" [width]="200">
+                            </dx-select-box>
                         </div>
                     </div>
                     <div class="dx-field" style="display: flex">
@@ -176,7 +177,7 @@
             <div class=" button-handle">
                 <div style="float: left">
                     <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120"
-                        (onClick)="click($event)">
+                        (onClick)="navigateHome($event)">
                     </dx-button>
                 </div>
 
@@ -297,7 +298,8 @@
                 <div class="dx-field-value"></div>
             </div>
             <div class="buttons-column" style="margin-top: 20px">
-                <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120" (onClick)="click($event)">
+                <dx-button stylingMode="contained" text="Cancel" type="normal" [width]="120"
+                    (onClick)="navigateBack($event)">
                 </dx-button>
                 <div class="divider"></div>
                 <dx-button stylingMode="contained" text="Add" type="success" [width]="120" (onClick)="click($event)">

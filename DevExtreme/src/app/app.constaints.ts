@@ -1,5 +1,3 @@
-
-
 export const DISPLAY_FORMAT_DATETIME = 'dd/MM/yy';
 
 export const DISPLAY_FORMAT_TIME = 'HH:mm';

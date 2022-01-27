@@ -3,7 +3,7 @@ import { OfferingService } from './../../service/program-offering.service';
 import { Service } from 'src/app/service/test.service';
 import { FormDetailService } from './../../service/program-form-detail.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PriorityEntity } from 'src/app/service/program-offering.service';
 import notify from 'devextreme/ui/notify';
@@ -28,14 +28,14 @@ export class ProgramFormDetailComponent implements OnInit {
   formatMoney: string = DISPLAY_FORMAT_MONEY;
 
 
-  popupVisible = true;
+  popupVisible = false;
   offering: ProgramOfferingVM[] | undefined;
   now: Date = new Date();
 
   namePattern: any = /^[^0-9]+$/;
 
 
-  constructor(private _activateRouteService: ActivatedRoute, Service: OfferingService) {
+  constructor(private _activateRouteService: ActivatedRoute, Service: OfferingService, private router: Router) {
     this.simpleProducts = [];
     this.valueForEditableTextArea = "";
     this.valueChangeEvents = [{
@@ -70,6 +70,12 @@ export class ProgramFormDetailComponent implements OnInit {
     notify(`The ${this.capitalize(buttonText)} button was clicked`);
   };
 
+  navigateBack(e: any) {
+    this.popupVisible = false;
+  }
+  navigateHome(e: any) {
+    this.router.navigate(['programs']);
+  }
 
 }
 
