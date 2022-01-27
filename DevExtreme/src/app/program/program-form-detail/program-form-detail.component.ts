@@ -1,3 +1,4 @@
+import { DISPLAY_FORMAT_MONEY } from './../../app.constaints';
 import { OfferingService } from './../../service/program-offering.service';
 import { Service } from 'src/app/service/test.service';
 import { FormDetailService } from './../../service/program-form-detail.service';
@@ -7,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { PriorityEntity } from 'src/app/service/program-offering.service';
 import notify from 'devextreme/ui/notify';
 import { ProgramOfferingVM } from 'src/app/model/program-offering.model';
+import { DISPLAY_FORMAT_DATETIME, DISPLAY_FORMAT_TIME } from 'src/app/app.constaints';
 @Component({
   selector: 'app-program-form-detail',
   templateUrl: './program-form-detail.component.html',
@@ -21,8 +23,12 @@ export class ProgramFormDetailComponent implements OnInit {
   valueChangeEvents: any[];
   priorities: string[];
   priorityEntities: PriorityEntity[];
+  formatDatetime: string = DISPLAY_FORMAT_DATETIME;
+  formatTime: string = DISPLAY_FORMAT_TIME;
+  formatMoney: string = DISPLAY_FORMAT_MONEY;
 
-  popupVisible = false;
+
+  popupVisible = true;
   offering: ProgramOfferingVM[] | undefined;
   now: Date = new Date();
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Service } from 'src/app/service/test.service';
 import themes from 'devextreme/ui/themes';
 import { ProgramListVM } from 'src/app/model/program-list.model';
+import { Router } from '@angular/router';
+import { ActionSelect } from 'src/app/shared/enum';
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
@@ -17,9 +19,12 @@ export class ProgramListComponent implements OnInit {
     new ProgramListVM('In to javascript 4', '3 offers', 'Hieu', 3)
   ];
 
-  ActionOnSelect: string[];
-  AllOrganizations: string[];
-  Program: string[];
+  actionOnSelect: any = [
+    { id: 0, name: ActionSelect.Delete_Program },
+    { id: 1, name: ActionSelect.Set_To_Inactive },
+  ];
+  allOrganizations: string[];
+  program: string[];
 
   currentProduct: any;
   collapsed = false;
@@ -37,6 +42,7 @@ export class ProgramListComponent implements OnInit {
   get isCompactMode() {
     return this.displayMode === 'compact';
   }
+  actionSelected: any = null;
 
   contentReady = (e: any) => {
     if (!this.collapsed) {
@@ -47,10 +53,15 @@ export class ProgramListComponent implements OnInit {
 
   customizeTooltip = (pointsInfo: any) => ({ text: `${parseInt(pointsInfo.originalValue)}%` });
 
-  constructor(service: Service) {
+  constructor(service: Service, private router: Router) {
+
+  }
+
+  ngOnInit(): void {
     this.checkBoxesMode = themes.current().startsWith('material') ? 'always' : 'onClick';
     this.allMode = 'allPages';
   }
+
   itemClick(data: any) {
     const item = data.itemData;
 
@@ -66,6 +77,11 @@ export class ProgramListComponent implements OnInit {
     this.selectedId = id;
   }
 
-  ngOnInit(): void {
+  onActionChanged(e: any) {
+    console.log(this.actionSelected);
+  }
+
+  navigateToAddNew(e: any) {
+    this.router.navigate(['programs', 'add']);
   }
 }

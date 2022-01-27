@@ -19,29 +19,34 @@
   display: inline-block;
 }
 .form {
-  border-style: groove;
-  margin: 0 200px 200px 200px;
-  width: 60%;
+  border: 1px solid #c4c4c4;
+  padding: 15px 25px 15px 25px;
   height: 110vh;
   /* padding: 30px 30px 35px 20px; */
+}
+
+.program-content {
+  width: 60%;
+  margin: 0 20% 200px 20%;
 }
 .dx-field {
   margin-top: 12px;
 }
 .formSize {
   width: 800px;
-  height: 600px;
+  height: auto;
   margin-left: 15px;
 }
-.addOffering {
-  border-bottom: solid;
+
+.button-handle {
+  margin-top: 25px;
 }
 .buttons-column {
-  width: 70%;
-  margin-left: 150px;
+  /* width: 70%; */
+  float: right;
 }
 .skill {
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: 15px;
 }
 .skill-field-value {
