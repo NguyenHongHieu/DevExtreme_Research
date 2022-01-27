@@ -7,3 +7,11 @@ export enum ActionSelect {
 export enum FillterSelect {
     Bobs_Summer_Camp = 'Bobs Summer Camp',
 }
+
+export enum ProgramTypeSelect {
+    External_Activities = 'External Activities',
+    Camps = 'Camps',
+    Clubs = 'Clubs',
+    Courses = 'Courses',
+    Work_experiences = "Work Experiences"
+}

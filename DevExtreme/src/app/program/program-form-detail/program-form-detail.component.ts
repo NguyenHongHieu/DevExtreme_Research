@@ -9,6 +9,7 @@ import { PriorityEntity } from 'src/app/service/program-offering.service';
 import notify from 'devextreme/ui/notify';
 import { ProgramOfferingVM } from 'src/app/model/program-offering.model';
 import { DISPLAY_FORMAT_DATETIME, DISPLAY_FORMAT_TIME } from 'src/app/app.constaints';
+import { ProgramTypeSelect } from 'src/app/shared/enum';
 @Component({
   selector: 'app-program-form-detail',
   templateUrl: './program-form-detail.component.html',
@@ -23,17 +24,23 @@ export class ProgramFormDetailComponent implements OnInit {
   valueChangeEvents: any[];
   priorities: string[];
   priorityEntities: PriorityEntity[];
+
   formatDatetime: string = DISPLAY_FORMAT_DATETIME;
   formatTime: string = DISPLAY_FORMAT_TIME;
   formatMoney: string = DISPLAY_FORMAT_MONEY;
 
-
   popupVisible = false;
   offering: ProgramOfferingVM[] | undefined;
   now: Date = new Date();
-
   namePattern: any = /^[^0-9]+$/;
 
+  programType: any = [
+    { id: 0, name: ProgramTypeSelect.External_Activities },
+    { id: 1, name: ProgramTypeSelect.Camps },
+    { id: 2, name: ProgramTypeSelect.Clubs },
+    { id: 3, name: ProgramTypeSelect.Courses },
+    { id: 4, name: ProgramTypeSelect.Work_experiences },
+  ];
 
   constructor(private _activateRouteService: ActivatedRoute, Service: OfferingService, private router: Router) {
     this.simpleProducts = [];
@@ -75,6 +82,9 @@ export class ProgramFormDetailComponent implements OnInit {
   }
   navigateHome(e: any) {
     this.router.navigate(['programs']);
+  }
+  onProgramType(e: any) {
+    console.log(this.programType);
   }
 
 }
