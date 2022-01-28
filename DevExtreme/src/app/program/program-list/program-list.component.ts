@@ -25,7 +25,7 @@ export class ProgramListComponent implements OnInit {
     { id: 0, name: ActionSelect.Delete_Program },
     { id: 1, name: ActionSelect.Set_To_Inactive },
   ];
-  fillterbyselect: any = [
+  fillterOnselect: any = [
     { id: 0, name: FillterSelect.Bobs_Summer_Camp },
   ];
 
@@ -40,6 +40,8 @@ export class ProgramListComponent implements OnInit {
   collapsed = false;
   allMode: string;
   selectedId: number;
+
+  fillterBySelect: any = null;
 
   checkBoxesMode: string;
 
@@ -88,6 +90,6 @@ export class ProgramListComponent implements OnInit {
     this.router.navigate(['programs', 'add']);
   }
   onFillterBy(e: any) {
-    console.log(this.fillterbyselect);
+    console.log(this.fillterBySelect);
   }
 }

@@ -41,7 +41,7 @@ export class ProgramFormDetailComponent implements OnInit {
     { id: 3, name: ProgramTypeSelect.Courses },
     { id: 4, name: ProgramTypeSelect.Work_experiences },
   ];
-
+  programTypeSelected: any = null;
   constructor(private _activateRouteService: ActivatedRoute, Service: OfferingService, private router: Router) {
     this.simpleProducts = [];
     this.valueForEditableTextArea = "";

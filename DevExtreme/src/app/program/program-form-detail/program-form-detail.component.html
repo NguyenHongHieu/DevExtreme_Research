@@ -27,8 +27,8 @@
                         <div class="dx-field-label">Program type</div>
                         <div class="dx-field-value">
                             <dx-select-box [dataSource]="programType" [width]="200" placeholder="Select program type"
-                                [items]="programType" [(value)]="programType" [displayExpr]="'name'"
-                                (onSelectionChanged)="onProgramType($event)">
+                                [items]="programType" [(value)]="programTypeSelected" [displayExpr]="'name'"
+                                (onSelectionChanged)="programTypeSelected($event)">
                                 <dx-validator>
                                     <dxi-validation-rule type="required" message="Program type is required">
                                     </dxi-validation-rule>
