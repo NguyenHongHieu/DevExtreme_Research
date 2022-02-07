@@ -1,3 +1,4 @@
+import { ALLOWED_PAGE_SIZES } from './../../app.constaints';
 import { Active } from './../../model/program-list.model';
 import { Component, OnInit } from '@angular/core';
 import { Service } from 'src/app/service/test.service';
@@ -6,6 +7,14 @@ import { ProgramListVM } from 'src/app/model/program-list.model';
 import { Router } from '@angular/router';
 import { ActionSelect } from 'src/app/shared/enum';
 import { FillterSelect } from 'src/app/shared/enum';
+import { HttpClientModule } from '@angular/common/http';
+import { ProgramListService } from 'src/app/service/program-list.service';
+import DataSource from 'devextreme/data/data_source';
+import CustomStore from 'devextreme/data/custom_store';
+import { BaseFilterParamsModel } from 'src/app/model/base-filter-params.model';
+import { SORT_TYPE } from 'src/app/shared/app.enum';
+import { PAGE_SIZE_XSMALL } from 'src/app/app.constaints';
+
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
@@ -22,7 +31,6 @@ export class ProgramListComponent implements OnInit {
   // ];
 
   dataSource: ProgramListVM[] = [];
-
   actionOnSelect: any = [
     { id: 0, name: ActionSelect.Delete_Program },
     { id: 1, name: ActionSelect.Set_To_Inactive },
@@ -38,14 +46,21 @@ export class ProgramListComponent implements OnInit {
   ];
   program: string[];
 
+
   currentProduct: any;
   collapsed = false;
   allMode: string;
   selectedId: number;
 
-  fillterBySelect: any = null;
+  gridSource: any;
+  sortColumn = '';
+  sortOrder: string;
+  pageSize: number = PAGE_SIZE_XSMALL;
+  allowPageSizes: any = ALLOWED_PAGE_SIZES;
 
   checkBoxesMode: string;
+
+  fillterBySelect: any = null;
 
   showNavButtons = true;
   displayMode = 'full';
@@ -67,8 +82,72 @@ export class ProgramListComponent implements OnInit {
 
   customizeTooltip = (pointsInfo: any) => ({ text: `${parseInt(pointsInfo.originalValue)}%` });
 
-  constructor(service: Service, private router: Router) {
+  constructor(private programListService: ProgramListService, private router: Router) {
+    //this.loadGrid();
+  }
 
+  OnInit() {
+    this.loadGridData();
+  }
+
+  // loadGrid() {
+  // 	this.programListService.getPrograms().subscribe(res => {
+  // 		this.dataSource = res;
+  // 		console.log(res);
+  // 	})
+  // }
+
+  loadGridData() {
+    this.gridSource = new DataSource({
+      store: new CustomStore({
+        key: 'id',
+        load: (option) => {
+          return this.gridLoadOption(option);
+        },
+        update: (key: string, values: ProgramListVM) => {
+          values.id = key;
+          return null;
+
+        },
+        onLoaded: () => {
+          // Updates the content of widget after resizing.
+          //this.updateDimension();
+        },
+        onUpdated: async (key, values) => {
+          console.log('Update rent review successfully');
+        },
+        onRemoved: (key) => {
+          console.log('The rent review is deleted');
+        }
+      })
+    });
+  }
+
+  gridLoadOption(loadOptions: any) {
+    this.sortColumn = '';
+    this.sortOrder = '';
+
+    if (!!loadOptions.sort) {
+      this.sortColumn = loadOptions.sort[0].selector.charAt(0).toUpperCase() + loadOptions.sort[0].selector.slice(1);
+      this.sortOrder = loadOptions.sort[0].desc ? SORT_TYPE.DESC : SORT_TYPE.ASC;
+    }
+
+    const params = new BaseFilterParamsModel({
+      sortColumn: this.sortColumn,
+      sortType: this.sortOrder,
+      skip: loadOptions.skip,
+      take: loadOptions.take,
+      filters: [],
+    });
+
+    return this.programListService.getPrograms(params).toPromise()
+      .then(res => {
+        console.log(res);
+        return {
+          data: res.records,
+          totalCount: res.totalRecords
+        };
+      });
   }
 
   ngOnInit(): void {

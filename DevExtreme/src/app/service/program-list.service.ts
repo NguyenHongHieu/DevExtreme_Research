@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { ProgramListVM } from '../model/program-list.model';
 import { BaseService } from './base.service';
 import { HttpClient } from "@angular/common/http";
+import { BaseFilterParamsModel } from "../model/base-filter-params.model";
+import { GridDataModel } from "../model/Grid-data.model";
 @Injectable({
     providedIn: 'root'
 })
@@ -21,8 +23,8 @@ export class ProgramListService {
     constructor(private baseService: BaseService) {
 
     }
-    public getPrograms(): Observable<ProgramListVM[]> {
-        return this.baseService.get(`${this.baseUrl}`);
+    public getPrograms(params: BaseFilterParamsModel): Observable<GridDataModel<ProgramListVM>> {
+        return this.baseService.get(`${this.baseUrl}?take=${params.take}&skip=${params.skip}`);
     }
 }
 

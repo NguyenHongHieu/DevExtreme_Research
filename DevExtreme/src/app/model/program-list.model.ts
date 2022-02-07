@@ -1,4 +1,5 @@
 export class ProgramListVM {
+    public id: string;
     public name: string;
     public offering: string;
     public publishedBy: string;
