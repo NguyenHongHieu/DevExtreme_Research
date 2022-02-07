@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
 import { ProgramFormDetailComponent } from './program-form-detail/program-form-detail.component';
 import { LayoutModule } from '../layout/layout.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
     {
@@ -41,6 +42,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         LayoutModule,
+        HttpClientModule,
         RouterModule.forChild(routes)],
     exports: [],
     providers: [],

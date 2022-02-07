@@ -13,13 +13,15 @@ import { FillterSelect } from 'src/app/shared/enum';
 })
 export class ProgramListComponent implements OnInit {
 
-  dataSource: ProgramListVM[] = [
-    new ProgramListVM('In to javascript', '3 offers', 'Hieu', 3),
-    new ProgramListVM('In to javascript 1', '3 offers', 'Hieu', 3),
-    new ProgramListVM('In to javascript 2', '3 offers', 'Hieu', 3),
-    new ProgramListVM('In to javascript 3', '3 offers', 'Hieu', 3),
-    new ProgramListVM('In to javascript 4', '3 offers', 'Hieu', 3)
-  ];
+  // dataSource: ProgramListVM[] = [
+  //   new ProgramListVM('In to javascript', '3 offers', 'Hieu', 3),
+  //   new ProgramListVM('In to javascript 1', '3 offers', 'Hieu', 3),
+  //   new ProgramListVM('In to javascript 2', '3 offers', 'Hieu', 3),
+  //   new ProgramListVM('In to javascript 3', '3 offers', 'Hieu', 3),
+  //   new ProgramListVM('In to javascript 4', '3 offers', 'Hieu', 3)
+  // ];
+
+  dataSource: ProgramListVM[] = [];
 
   actionOnSelect: any = [
     { id: 0, name: ActionSelect.Delete_Program },

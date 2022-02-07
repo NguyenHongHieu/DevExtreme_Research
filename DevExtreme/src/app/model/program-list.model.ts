@@ -5,11 +5,14 @@ export class ProgramListVM {
     public views: number;
 
 
-    constructor(name: string, offering: string, publishedBy: string, views: number) {
-        this.name = name;
-        this.offering = offering;
-        this.publishedBy = publishedBy;
-        this.views = views;
+    // constructor(name: string, offering: string, publishedBy: string, views: number) {
+    //     this.name = name;
+    //     this.offering = offering;
+    //     this.publishedBy = publishedBy;
+    //     this.views = views;
+    // }
+    public constructor(init?: Partial<ProgramListVM>) {
+        Object.assign(this, init);
     }
 
 
