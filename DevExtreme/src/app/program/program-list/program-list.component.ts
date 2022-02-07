@@ -15,6 +15,7 @@ import { BaseFilterParamsModel } from 'src/app/model/base-filter-params.model';
 import { SORT_TYPE } from 'src/app/shared/app.enum';
 import { PAGE_SIZE_XSMALL } from 'src/app/app.constaints';
 
+
 @Component({
   selector: 'app-program-list',
   templateUrl: './program-list.component.html',
@@ -85,11 +86,6 @@ export class ProgramListComponent implements OnInit {
   constructor(private programListService: ProgramListService, private router: Router) {
     //this.loadGrid();
   }
-
-  OnInit() {
-    this.loadGridData();
-  }
-
   // loadGrid() {
   // 	this.programListService.getPrograms().subscribe(res => {
   // 		this.dataSource = res;
@@ -98,16 +94,19 @@ export class ProgramListComponent implements OnInit {
   // }
 
   loadGridData() {
+    if (!this.gridSource) {
+      this.gridSource = {};
+    }
+
     this.gridSource = new DataSource({
       store: new CustomStore({
-        key: 'id',
         load: (option) => {
+          console.log(option);
           return this.gridLoadOption(option);
         },
         update: (key: string, values: ProgramListVM) => {
           values.id = key;
           return null;
-
         },
         onLoaded: () => {
           // Updates the content of widget after resizing.
@@ -124,6 +123,7 @@ export class ProgramListComponent implements OnInit {
   }
 
   gridLoadOption(loadOptions: any) {
+
     this.sortColumn = '';
     this.sortOrder = '';
 
@@ -153,6 +153,7 @@ export class ProgramListComponent implements OnInit {
   ngOnInit(): void {
     this.checkBoxesMode = themes.current().startsWith('material') ? 'always' : 'onClick';
     this.allMode = 'allPages';
+    this.loadGridData();
   }
 
   itemClick(data: any) {
